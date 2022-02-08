@@ -33,6 +33,13 @@ public:
     virtual void    setDesignResolutionSize(float width, float height);
     virtual void    setTouchDelegate(EGLTouchDelegate * pDelegate);
     virtual float   getScreenScaleFactor();
+    virtual float   getScreenScaleFactorMax();
+    virtual float   getScreenScaleFactorH();
+    virtual float   getScreenScaleFactorW();
+    virtual float   getScreenTop();
+    virtual float   getScreenBottom();
+    virtual float   getScreenLeft();
+    virtual float   getScreenRight();
     virtual bool    canSetContentScaleFactor();
     virtual void    setContentScaleFactor(float contentScaleFactor);
     virtual void    setViewPortInPoints(float x , float y , float w , float h);
@@ -53,10 +60,16 @@ protected:
     bool m_bNeedScale;
     EGLTouchDelegate* m_pDelegate;
     float  m_fScreenScaleFactor;
+    float  m_fScreenScaleFactorMax;
     CCSize m_sSizeInPixel;
     CCSize m_sSizeInPoint;
     CCRect m_rcViewPort;
     char m_szViewName[50];
+    bool m_bLandscape;
+    float m_fScreenTop;
+    float m_fScreenBottom;
+    float m_fScreenLeft;
+    float m_fScreenRight;
 };
 
 // end of platform group

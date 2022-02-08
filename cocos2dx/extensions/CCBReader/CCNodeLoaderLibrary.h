@@ -1,15 +1,18 @@
 #ifndef _CCB_CCNODELOADERLIBRARY_H_
 #define _CCB_CCNODELOADERLIBRARY_H_
 
-#include "cocos2d.h"
-#include "CCBReader.h"
+#include "extensions/CCBReader/CCBReader.h"
+
+#include <map>
 
 NS_CC_EXT_BEGIN
 
 typedef std::map<CCString *, CCNodeLoader *, CCStringCompare> CCNodeLoaderMap;
 typedef std::pair<CCString *, CCNodeLoader *> CCNodeLoaderMapEntry;
 
-class CC_DLL CCNodeLoaderLibrary : public CCObject {
+class CC_DLL CCNodeLoaderLibrary
+    : public CCObject
+{
     private:
         CCNodeLoaderMap mCCNodeLoaders;
 

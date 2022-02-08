@@ -27,6 +27,8 @@ THE SOFTWARE.
 
 #include "platform/CCPlatformMacros.h"
 
+class DS_Dictionary;
+
 NS_CC_BEGIN
 
 /**
@@ -38,6 +40,13 @@ class CCZone;
 class CCObject;
 class CCNode;
 class CCEvent;
+
+enum CCObjectType
+{
+    kCCObjectTypePlayLayer = 5,
+    kCCObjectTypeLevelEditorLayer = 6,
+    kCCObjectTypeMenuLayer = 15,
+};
 
 class CC_DLL CCCopying
 {
@@ -56,7 +65,7 @@ protected:
     // count of refrence
     unsigned int        m_uReference;
     // is the object autoreleased
-    bool        m_bManaged;        
+    bool                m_bManaged;      
 public:
     CCObject(void);
     virtual ~CCObject(void);
@@ -69,7 +78,13 @@ public:
     unsigned int retainCount(void);
     virtual bool isEqual(const CCObject* pObject);
 
-    virtual void update(float dt) {CC_UNUSED_PARAM(dt);};
+    virtual void update(float dt);
+    
+    CC_SYNTHESIZE(CCObjectType, m_objType, ObjType);
+    
+    virtual void encodeWithCoder(DS_Dictionary *dict);
+    
+    virtual bool canEncode();
     
     friend class CCAutoreleasePool;
 };

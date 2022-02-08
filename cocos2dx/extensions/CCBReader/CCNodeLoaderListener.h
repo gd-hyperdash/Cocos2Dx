@@ -1,11 +1,12 @@
 #ifndef _CCB_CCNODELOADERLISTENER_H_
 #define _CCB_CCNODELOADERLISTENER_H_
 
-#include "cocos2d.h"
+#include "extensions/CCBReader/CCNodeLoader.h"
 
 NS_CC_EXT_BEGIN
 
-class CC_DLL CCNodeLoaderListener {
+class CC_DLL CCNodeLoaderListener
+{
     public:
         virtual ~CCNodeLoaderListener();
 

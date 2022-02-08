@@ -1,14 +1,16 @@
 #ifndef _CCB_CCLAYERGRADIENTLOADER_H_
 #define _CCB_CCLAYERGRADIENTLOADER_H_
 
-#include "CCLayerLoader.h"
+#include "extensions/CCBReader/CCLayerLoader.h"
 
 NS_CC_EXT_BEGIN
 
 /* Forward declaration. */
 class CCBReader;
 
-class CC_DLL CCLayerGradientLoader : public CCLayerLoader {
+class CC_DLL CCLayerGradientLoader
+    : public CCLayerLoader
+{
     public:
         virtual ~CCLayerGradientLoader();
         CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(CCLayerGradientLoader, loader);

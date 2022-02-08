@@ -62,6 +62,7 @@ typedef enum {
 /* Forward declarations. */
 class CCLabelAtlas;
 class CCScene;
+class CCSceneDelegate;
 class CCEGLView;
 class CCDirectorDelegate;
 class CCNode;
@@ -404,7 +405,8 @@ protected:
 
     WatcherCallbackFun m_pWatcherFun;
     void *m_pWatcherSender;
-
+    
+    CCSceneDelegate *m_pSceneDelegate;
 };
 
 /** 

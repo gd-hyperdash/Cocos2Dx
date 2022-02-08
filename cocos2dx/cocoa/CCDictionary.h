@@ -43,34 +43,11 @@ class CC_DLL CCDictElement
 {
     #define MAX_KEY_LEN  256
 public:
-    CCDictElement(const char* pszKey, CCObject* pObject)
-    {
-        init();
-        m_pObject = pObject;
-
-        const char* pStart = pszKey;
-        
-        int len = strlen(pszKey);
-        if (len > MAX_KEY_LEN )
-        {
-            char* pEnd = (char*)&pszKey[len-1];
-            pStart = pEnd - (MAX_KEY_LEN-1);
-        }
-
-        strcpy(m_szKey, pStart);
-    }
-
-    CCDictElement(int iKey, CCObject* pObject)
-    {
-        init();
-        m_iKey = iKey;
-        m_pObject = pObject;
-    }
+    CCDictElement(const char* pszKey, CCObject* pObject);
+    CCDictElement(int iKey, CCObject* pObject);
 
     const char* getStrKey() const;
-
     int getIntKey() const;
-
     CCObject* getObject() const;
 
 private:

@@ -1,20 +1,23 @@
 #ifndef _CCB_CCLABELBMFONTLOADER_H_
 #define _CCB_CCLABELBMFONTLOADER_H_
 
-#include "CCNodeLoader.h"
+#include "label_nodes/CCLabelBMFont.h"
+#include "extensions/CCBReader/CCNodeLoader.h"
 
 NS_CC_EXT_BEGIN
 
 /* Forward declaration. */
 class CCBReader;
 
-class CC_DLL CCLabelBMFontLoader : public CCNodeLoader {
+class CC_DLL CCLabelBMFontLoader
+   : public CCNodeLoader
+{
     public:
         virtual ~CCLabelBMFontLoader();
         CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(CCLabelBMFontLoader, loader);
 
     protected:
-        CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(CCLabelBMFont);
+        CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(cocos2d::CCLabelBMFont);
 
         virtual void onHandlePropTypeColor3(CCNode * pNode, CCNode * pParent, CCString * pPropertyName, ccColor3B pCCColor3B, CCBReader * pCCBReader);
         virtual void onHandlePropTypeByte(CCNode * pNode, CCNode * pParent, CCString * pPropertyName, unsigned char pByte, CCBReader * pCCBReader);

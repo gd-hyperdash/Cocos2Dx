@@ -1,20 +1,23 @@
 #ifndef _CCB_CCLABELTTFLOADER_H_
 #define _CCB_CCLABELTTFLOADER_H_
 
-#include "CCNodeLoader.h"
+#include "extensions/CCBReader/CCNodeLoader.h"
+#include "label_nodes/CCLabelTTF.h"
 
 NS_CC_EXT_BEGIN
 
 /* Forward declaration. */
 class CCBReader;
 
-class CC_DLL CCLabelTTFLoader : public CCNodeLoader {
+class CC_DLL CCLabelTTFLoader
+    : public CCNodeLoader
+{
     public:
         virtual ~CCLabelTTFLoader();
         CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(CCLabelTTFLoader, loader);
 
     protected:
-        CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(CCLabelTTF);
+        CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(cocos2d::CCLabelTTF);
 
         virtual void onHandlePropTypeColor3(CCNode * pNode, CCNode * pParent, CCString * pPropertyName, ccColor3B pCCColor3B, CCBReader * pCCBReader);
         virtual void onHandlePropTypeByte(CCNode * pNode, CCNode * pParent, CCString * pPropertyName, unsigned char pByte, CCBReader * pCCBReader);

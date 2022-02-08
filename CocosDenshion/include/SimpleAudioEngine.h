@@ -53,9 +53,9 @@ public:
     static void end();
 
     /**
-     @brief Preload background music
-     @param pszFilePath The path of the background music file,or the FileName of T_SoundResInfo
-     */
+    @brief Preload background music
+    @param pszFilePath The path of the background music file,or the FileName of T_SoundResInfo
+    */
     void preloadBackgroundMusic(const char* pszFilePath);
     
     /**
@@ -121,9 +121,12 @@ public:
     /**
     @brief Play sound effect
     @param pszFilePath The path of the effect file,or the FileName of T_SoundResInfo
-    @bLoop Whether to loop the effect playing, default value is false
+    @param bLoop Whether to loop the effect playing, default value is false
+	@param pitch Frequency, normal value is 1.0. Will also change effect play time.
+	@param pan   Stereo effect, in the range of [-1..1] where -1 enables only left channel.
+	@param gain  Volume, in the range of [0..1]. The normal value is 1.
     */
-    unsigned int playEffect(const char* pszFilePath, bool bLoop = false);
+    unsigned int playEffect(const char* pszFilePath, bool bLoop = false, float pitch = 1.0f, float pan = 0.0f, float gain = 1.0f);
 
     /**
     @brief Pause playing sound effect
@@ -168,8 +171,8 @@ public:
     void preloadEffect(const char* pszFilePath);
 
     /**
-    @brief          unload the preloaded effect from internal buffer
-    @param[in]        pszFilePath        The path of the effect file,or the FileName of T_SoundResInfo
+    @brief unload the preloaded effect from internal buffer
+    @param pszFilePath The path of the effect file,or the FileName of T_SoundResInfo
     */
     void unloadEffect(const char* pszFilePath);
 };

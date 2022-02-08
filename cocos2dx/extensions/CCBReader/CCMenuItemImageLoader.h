@@ -1,7 +1,7 @@
 #ifndef _CCB_CCMENUITEMIMAGELOADER_H_
 #define _CCB_CCMENUITEMIMAGELOADER_H_
 
-#include "CCMenuItemLoader.h"
+#include "extensions/CCBReader/CCMenuItemLoader.h"
 
 NS_CC_EXT_BEGIN
 

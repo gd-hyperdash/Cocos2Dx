@@ -237,7 +237,7 @@ public:
     CC_PROPERTY(CCNode *, m_pParent, Parent)
 
     // If ture, the Anchor Point will be (0,0) when you position the CCNode.
-	// Used by CCLayer and CCScene
+    // Used by CCLayer and CCScene
     bool m_bIgnoreAnchorPointForPosition;
     bool isIgnoreAnchorPointForPosition();
     void ignoreAnchorPointForPosition(bool isIgnoreAnchorPointForPosition);
@@ -311,11 +311,11 @@ public:
 
     /** allocates and initializes a node.
      The node will be created as "autorelease".
-	 @deprecated: This interface will be deprecated sooner or later.
+     @deprecated: This interface will be deprecated sooner or later.
      */
     CC_DEPRECATED_ATTRIBUTE static CCNode * node(void);
 
-	/** allocates and initializes a node.
+    /** allocates and initializes a node.
      The node will be created as "autorelease".
      */
     static CCNode * create(void);
@@ -379,6 +379,11 @@ public:
      @since v0.99.3
      */
     void removeFromParentAndCleanup(bool cleanup);
+    
+    /** Remove itself from its parent node, then also remove all actions and callbacks.
+     If the node orphan, then nothing happens.
+     */
+    void removeMeAndCleanup();
 
     /** Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter.
      @since v0.7.1
@@ -610,6 +615,8 @@ public:
      @since v0.7.1
      */
     CCPoint convertTouchToNodeSpaceAR(CCTouch * touch);
+	
+	virtual void updateTweenAction(float value, const char* key);
 };
 
 // end of base_node group

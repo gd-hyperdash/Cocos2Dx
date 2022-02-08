@@ -1,7 +1,12 @@
 #ifndef _CCB_CCBREADER_H_
 #define _CCB_CCBREADER_H_
 
-#include "cocos2d.h"
+#include "cocoa/CCGeometry.h"
+#include "cocoa/CCString.h"
+
+#include <vector>
+#include <string>
+#include <set>
 
 #define CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(T, METHOD) static T * METHOD() { \
     T * ptr = new T(); \

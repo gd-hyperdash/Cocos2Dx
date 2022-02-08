@@ -56,6 +56,12 @@ public:
     static CCScene *create(void);
 };
 
+class CC_DLL CCSceneDelegate
+{
+public:
+    virtual void willSwitchToScene(cocos2d::CCScene *pScene);
+};
+
 // end of scene group
 /// @}
 

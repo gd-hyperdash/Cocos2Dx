@@ -1,7 +1,7 @@
 #ifndef _CCB_CCLAYERCOLORLOADER_H_
 #define _CCB_CCLAYERCOLORLOADER_H_
 
-#include "CCLayerLoader.h"
+#include "extensions/CCBReader/CCLayerLoader.h"
 
 NS_CC_EXT_BEGIN
 

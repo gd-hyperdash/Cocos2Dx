@@ -1,7 +1,8 @@
 #ifndef _CCB_CCBMEMBERVARIABLEASSIGNER_H_
 #define _CCB_CCBMEMBERVARIABLEASSIGNER_H_
 
-#include "cocos2d.h"
+#include "cocoa/CCObject.h"
+#include "cocoa/CCString.h"
 
 NS_CC_EXT_BEGIN
 
@@ -21,7 +22,10 @@ class CC_DLL CCBMemberVariableAssigner {
     public:
         virtual ~CCBMemberVariableAssigner();
 
-        virtual bool onAssignCCBMemberVariable(CCObject * pTarget, cocos2d::CCString * pMemberVariableName, CCNode * pNode) = 0;
+        virtual bool onAssignCCBMemberVariable(
+            CCObject * pTarget,
+            CCString * pMemberVariableName, 
+            CCNode * pNode) = 0;
 };
 
 NS_CC_EXT_END

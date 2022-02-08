@@ -1,7 +1,7 @@
 #ifndef _CCB_CCCONTROLBUTTONLOADER_H_
 #define _CCB_CCCONTROLBUTTONLOADER_H_
 
-#include "CCControlLoader.h"
+#include "extensions/CCBReader/CCControlLoader.h"
 
 NS_CC_EXT_BEGIN
 

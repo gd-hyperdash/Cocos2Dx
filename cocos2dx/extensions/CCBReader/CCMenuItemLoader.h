@@ -1,14 +1,16 @@
 #ifndef _CCB_CCMENUITEMLOADER_H_
 #define _CCB_CCMENUITEMLOADER_H_
 
-#include "CCLayerLoader.h"
+#include "extensions/CCBReader/CCLayerLoader.h"
 
 NS_CC_EXT_BEGIN
 
 /* Forward declaration. */
 class CCBReader;
 
-class CC_DLL CCMenuItemLoader : public CCNodeLoader {
+class CC_DLL CCMenuItemLoader
+    : public CCNodeLoader
+{
     public:
         virtual ~CCMenuItemLoader();
 

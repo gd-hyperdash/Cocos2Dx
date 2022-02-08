@@ -1,7 +1,8 @@
 #ifndef _CCB_CCPARTICLESYSTEMQUADLOADER_H_
 #define _CCB_CCPARTICLESYSTEMQUADLOADER_H_
 
-#include "CCNodeLoader.h"
+#include "extensions/CCBReader/CCNodeLoader.h"
+#include "particle_nodes/CCParticleSystemQuad.h"
 
 NS_CC_EXT_BEGIN
 

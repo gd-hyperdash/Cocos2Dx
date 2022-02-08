@@ -1,14 +1,17 @@
 #ifndef _CCB_CCSCROLLVIEWLOADER_H_
 #define _CCB_CCSCROLLVIEWLOADER_H_
 
-#include "CCNodeLoader.h"
+#include "extensions/CCBReader/CCNodeLoader.h"
+#include "extensions/CCScrollView/CCScrollView.h"
 
 NS_CC_EXT_BEGIN
 
 /* Forward declaration. */
 class CCBReader;
 
-class CC_DLL CCScrollViewLoader : public CCNodeLoader {
+class CC_DLL CCScrollViewLoader
+    : public CCNodeLoader
+{
     public:
         virtual ~CCScrollViewLoader();
         CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(CCScrollViewLoader, loader);
