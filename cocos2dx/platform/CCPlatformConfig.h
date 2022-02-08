@@ -106,5 +106,8 @@ build for which target platform
 #pragma warning (disable:4127)  
 #endif  // CC_PLATFORM_WIN32
 
+// Include GDSTL
+#include <gdstl.hpp>
+
 #endif  // __CC_PLATFORM_CONFIG_H__
 

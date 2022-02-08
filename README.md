@@ -6,8 +6,4 @@ This repo contains the header files necessary to interface with [cocos2d-x](http
 
 ## Compatibility
 
-| Cocos version | GD version | Status              |
-|---------------|------------|---------------------|
-| 2.0.1 rc1     | 1.0 to 1.6 | Partially supported |
-| 2.2.3         | 1.7 to 2.1 | Unsupported         |
-| 2.2.6         | 2.2+       | Unsupported         |
+Current target is version `2.0.1`. Anything beyond is unsupported.
