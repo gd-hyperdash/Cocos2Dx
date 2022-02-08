@@ -46,11 +46,11 @@ public:
 	void setString(const char *str);
 	void updateLabel(const char *str);
 	
-	std::string placeholder_;
+	gdstd::string placeholder_;
 	float verticalPosition_;
 	bool showedKeyboard_;
 	bool needAdjustVerticalPosition_;
-	std::string allowedChars_;
+	gdstd::string allowedChars_;
 	float maxLabelWidth_;
 	float maxLabelScale_;
 	float labelPlaceholderScale_;

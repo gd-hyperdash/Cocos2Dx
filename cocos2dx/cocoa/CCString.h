@@ -40,7 +40,14 @@ class CC_DLL CCString : public CCObject
 public:
     CCString();
     CCString(const char* str);
-    CCString(const std::string& str);
+
+#define SYM_CCString "_ZN7cocos2d8CCStringC1ERKSs"
+
+    [[link_name(SYM_CCString)]]
+    CCString(const gdstd::string& str);
+
+#undef SYM_CCString
+
     CCString(const CCString& str);
 
     virtual ~CCString();
@@ -87,11 +94,16 @@ public:
      */
     CC_DEPRECATED_ATTRIBUTE static CCString* stringWithCString(const char* pStr);
 
+#define SYM_stringWithString "_ZN7cocos2d8CCString16stringWithStringERKSs"
+
     /** create a string with std::string
      *  @return A CCString pointer which is an autorelease object pointer,
      *          it means that you needn't do a release operation unless you retain it.
      */
-    CC_DEPRECATED_ATTRIBUTE static CCString* stringWithString(const std::string& str);
+    [[link_name(SYM_stringWithString)]]
+    CC_DEPRECATED_ATTRIBUTE static CCString* stringWithString(const gdstd::string& str);
+
+#undef SYM_stringWithString
 
     /** create a string with format, it's similar with the c function 'sprintf', the default buffer size is (1024*100) bytes,
      *  if you want to change it, you should modify the kMaxStringLen macro in CCString.cpp file.
@@ -115,11 +127,16 @@ public:
      */
     CC_DEPRECATED_ATTRIBUTE static CCString* stringWithContentsOfFile(const char* pszFileName);
 
+#define SYM_create "_ZN7cocos2d8CCString6createERKSs"
+
     /** create a string with std string, you can also pass a c string pointer because the default constuctor of std::string can access a c string pointer. 
      *  @return A CCString pointer which is an autorelease object pointer,
      *          it means that you needn't do a release operation unless you retain it.
      */
-    static CCString* create(const std::string& str);
+    [[link_name(SYM_create)]]
+    static CCString* create(const gdstd::string& str);
+
+#undef SYM_create
 
     /** create a string with format, it's similar with the c function 'sprintf', the default buffer size is (1024*100) bytes,
      *  if you want to change it, you should modify the kMaxStringLen macro in CCString.cpp file.
@@ -146,7 +163,7 @@ private:
     bool initWithFormatAndValist(const char* format, va_list ap);
 
 public:
-    std::string m_sString;
+    gdstd::string m_sString;
 };
 
 struct CCStringCompare : public std::binary_function<CCString *, CCString *, bool> {

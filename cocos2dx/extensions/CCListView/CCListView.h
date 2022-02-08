@@ -209,7 +209,7 @@ private:
     CCPoint                m_ptTouchEnd;
     CCPoint                m_ptPanelOffset;
     CCPoint                m_ptDestination; 
-    std::string            m_strDeletegate;
+    gdstd::string            m_strDeletegate;
     CCListViewDelegate*    m_pDelegate;
     CCLayer*               m_layerPanel;
     CCListView*            m_pListViewParent;

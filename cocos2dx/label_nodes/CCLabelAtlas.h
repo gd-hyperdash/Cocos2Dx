@@ -94,7 +94,7 @@ public:
 
 protected:
     // string to render
-    std::string m_sString;
+    gdstd::string m_sString;
     // the first char in the charmap
     unsigned int m_uMapStartChar;
 };

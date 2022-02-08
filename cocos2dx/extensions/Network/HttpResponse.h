@@ -63,8 +63,13 @@ public:
      */
     bool isSucceed();
     
+#define SYM_getResponseData "_ZN7cocos2d9extension14CCHttpResponse15getResponseDataEv"
+
     /** Get the http response raw data */
-    std::vector<char>* getResponseData();
+    [[link_name(SYM_getResponseData)]]
+    gdstd::vector<char>* getResponseData();
+
+#undef SYM_getResponseData
 
     /** Get the http response errorCode
      *  I know that you want to see http 200 :)
@@ -85,11 +90,14 @@ public:
      */
     void setSucceed(bool value);
     
-    
+#define SYM_setResponseData "\x00"
+
     /** Set the http response raw buffer, is used by CCHttpClient      
      */
-    void setResponseData(std::vector<char>* data);
+    [[link_name(SYM_setResponseData)]]
+    void setResponseData(gdstd::vector<char>* data);
     
+#undef SYM_setResponseData
     
     /** Set the http response errorCode
      */
@@ -106,9 +114,9 @@ protected:
     // properties
     CCHttpRequest*      _pHttpRequest;  /// the corresponding HttpRequest pointer who leads to this response 
     bool                _succeed;       /// to indecate if the http reqeust is successful simply
-    std::vector<char>   _responseData;  /// the returned raw data. You can also dump it as a string
+    gdstd::vector<char>   _responseData;  /// the returned raw data. You can also dump it as a string
     int                 _responseCode;  /// the status code returned from libcurl, e.g. 200, 404
-    std::string         _errorBuffer;   /// if _responseCode != 200, please read _errorBuffer to find the reason 
+    gdstd::string         _errorBuffer;   /// if _responseCode != 200, please read _errorBuffer to find the reason 
     
 };
 

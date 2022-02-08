@@ -113,7 +113,7 @@ private:
     static void initXMLFilePath();
     
     static CCUserDefault* m_spUserDefault;
-    static std::string m_sFilePath;
+    static gdstd::string m_sFilePath;
     static bool m_sbIsFilePathInitialized;
 };
 

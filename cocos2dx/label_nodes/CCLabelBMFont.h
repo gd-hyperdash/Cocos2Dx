@@ -103,7 +103,7 @@ public://@public
     //! Padding
     ccBMFontPadding    m_tPadding;
     //! atlas name
-    std::string m_sAtlasName;
+    gdstd::string m_sAtlasName;
     //! values for kerning
     struct _KerningHashElement    *m_pKerningDictionary;
 public:
@@ -179,10 +179,10 @@ protected:
     unsigned short* m_sString;
     
     // name of fntFile
-    std::string m_sFntFile;
+    gdstd::string m_sFntFile;
     
     // initial string without line breaks
-    std::string m_sInitialString;
+    gdstd::string m_sInitialString;
     // alignment of all lines
     CCTextAlignment m_pAlignment;
     // max width until a line break is added

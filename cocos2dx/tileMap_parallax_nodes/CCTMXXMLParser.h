@@ -90,7 +90,7 @@ class CC_DLL CCTMXLayerInfo : public CCObject
 {
     CC_PROPERTY(CCDictionary*, m_pProperties, Properties);
 public:
-    std::string            m_sName;
+    gdstd::string            m_sName;
     CCSize                m_tLayerSize;
     unsigned int        *m_pTiles;
     bool                m_bVisible;
@@ -117,13 +117,13 @@ This information is obtained from the TMX file.
 class CC_DLL CCTMXTilesetInfo : public CCObject
 {
 public:
-    std::string        m_sName;
+    gdstd::string        m_sName;
     unsigned int    m_uFirstGid;
     CCSize            m_tTileSize;
     unsigned int    m_uSpacing;
     unsigned int    m_uMargin;
     //! filename containing the tiles (should be spritesheet / texture atlas)
-    std::string        m_sSourceImage;
+    gdstd::string        m_sSourceImage;
     //! size in pixels of the image
     CCSize            m_tImageSize;
 public:
@@ -202,11 +202,11 @@ private:
     void internalInit(const char* tmxFileName, const char* resourcePath);
 protected:
     //! tmx filename
-    std::string m_sTMXFileName;
+    gdstd::string m_sTMXFileName;
     // tmx resource path
-    std::string m_sResources;
+    gdstd::string m_sResources;
     //! current string
-    std::string m_sCurrentString;
+    gdstd::string m_sCurrentString;
     //! tile properties
     CCDictionary* m_pTileProperties;
 };

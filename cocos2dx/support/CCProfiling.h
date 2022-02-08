@@ -78,7 +78,7 @@ public:
     /** resets the timer properties */
     void reset();
 
-    std::string m_NameStr;
+    gdstd::string m_NameStr;
     struct cc_timeval m_sStartTime;
     double m_dAverageTime;
     double            minTime;

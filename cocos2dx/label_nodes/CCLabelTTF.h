@@ -132,11 +132,11 @@ protected:
     /** The vertical alignment of the label */
     CCVerticalTextAlignment m_vAlignment;
     /** Font name used in the label */
-    std::string * m_pFontName;
+    gdstd::string * m_pFontName;
     /** Font size of the label */
     float m_fFontSize;
     
-    std::string m_string;
+    gdstd::string m_string;
 };
 
 // end of GUI group

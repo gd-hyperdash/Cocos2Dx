@@ -172,7 +172,7 @@ protected:
     CCPoint m_obOffsetInPixels;
     CCSize m_obOriginalSizeInPixels;
     CCTexture2D *m_pobTexture;
-    std::string  m_strTextureFilename;
+    gdstd::string  m_strTextureFilename;
 };
 
 // end of sprite_nodes group

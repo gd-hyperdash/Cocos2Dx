@@ -75,7 +75,7 @@ public:
     void update(float dt);
     CCActionInterval* reverse();
 
-    std::string        m_strKey;
+    gdstd::string        m_strKey;
     float            m_fFrom, m_fTo;
     float            m_fDelta;
 };

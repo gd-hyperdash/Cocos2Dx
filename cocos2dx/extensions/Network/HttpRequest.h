@@ -118,23 +118,33 @@ public:
     /** Get the selector function pointer, mainly used by CCHttpClient */
     SEL_CallFuncND getSelector();
 
+#define SYM_setHeaders "\x00"
+
     /** Set any custom headers **/
-    void setHeaders(std::vector<std::string> pHeaders);
+    [[link_name(SYM_setHeaders)]]
+    void setHeaders(gdstd::vector<gdstd::string> pHeaders);
+
+#undef SYM_setHeaders
    
+#define SYM_getHeaders "_ZN7cocos2d9extension13CCHttpRequest10getHeadersEv"
+
     /** Get custom headers **/
-    std::vector<std::string> getHeaders();
+    [[link_name(SYM_getHeaders)]]
+    gdstd::vector<gdstd::string> getHeaders();
+
+#undef SYM_getHeaders
 
 
 protected:
     // properties
     HttpRequestType             _requestType;    /// kHttpRequestGet, kHttpRequestPost or other enums
-    std::string                 _url;            /// target url that this request is sent to
-    std::vector<char>           _requestData;    /// used for POST
-    std::string                 _tag;            /// user defined tag, to identify different requests in response callback
+    gdstd::string                 _url;            /// target url that this request is sent to
+    gdstd::vector<char>           _requestData;    /// used for POST
+    gdstd::string                 _tag;            /// user defined tag, to identify different requests in response callback
     CCObject*                   _pTarget;        /// callback target of pSelector function
     SEL_CallFuncND              _pSelector;      /// callback function, e.g. MyLayer::onHttpResponse(CCNode *sender, void *data)
     void*                       _pUserData;      /// You can add your customed data here 
-    std::vector<std::string>    _headers;		      /// custom http headers
+    gdstd::vector<gdstd::string>    _headers;		      /// custom http headers
 };
 
 NS_CC_EXT_END

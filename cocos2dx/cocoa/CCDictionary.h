@@ -83,16 +83,40 @@ public:
     /** @warning : We use '==' to compare two objects*/
     CCArray* allKeysForObject(CCObject* object);
 
-    CCObject* objectForKey(const std::string& key);
+#define SYM_objectForKey "_ZN7cocos2d12CCDictionary12objectForKeyERKSs"
+
+    [[link_name(SYM_objectForKey)]]
+    CCObject* objectForKey(const gdstd::string& key);
+
+#undef SYM_objectForKey
+
     CCObject* objectForKey(int key);
-    const CCString* valueForKey(const std::string& key);
+
+#define SYM_valueForKey "_ZN7cocos2d12CCDictionary11valueForKeyERKSs"
+
+    [[link_name(SYM_valueForKey)]]
+    const CCString* valueForKey(const gdstd::string& key);
+
+#undef SYM_valueForKey
+
     const CCString* valueForKey(int key);
 
+#define SYM_setObject "_ZN7cocos2d12CCDictionary9setObjectEPNS_8CCObjectERKSs"
 
-    void setObject(CCObject* pObject, const std::string& key);
+    [[link_name(SYM_setObject)]]
+    void setObject(CCObject* pObject, const gdstd::string& key);
+
+#undef SYM_setObject
+
     void setObject(CCObject* pObject, int key);
 
-    void removeObjectForKey(const std::string& key);
+#define SYM_removeObjectForKey "_ZN7cocos2d12CCDictionary18removeObjectForKeyERKSs"
+
+    [[link_name(SYM_removeObjectForKey)]]
+    void removeObjectForKey(const gdstd::string& key);
+
+#undef SYM_removeObjectForKey
+
     void removeObjectForKey(int key);
     void removeObjectsForKeys(CCArray* pKeyArray);
     void removeObjectForElememt(CCDictElement* pElement);
@@ -138,7 +162,14 @@ public:
     static CCDictionary* createWithContentsOfFileThreadSafe(const char *pFileName);
 
 private:
-    void setObjectUnSafe(CCObject* pObject, const std::string& key);
+
+#define SYM_setObjectUnSafe "_ZN7cocos2d12CCDictionary15setObjectUnSafeEPNS_8CCObjectERKSs"
+
+    [[link_name(SYM_setObjectUnSafe)]]
+    void setObjectUnSafe(CCObject* pObject, const gdstd::string& key);
+
+#undef SYM_setObjectUnSafe
+
     void setObjectUnSafe(CCObject* pObject, const int key);
     
 public:

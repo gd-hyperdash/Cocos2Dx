@@ -14,7 +14,7 @@ class CC_DLL DS_Dictionary
 private:
     //Data
     pugi::xml_document doc;
-    std::vector<pugi::xml_node> dictTree;
+    gdstd::vector<pugi::xml_node> dictTree;
 
     //Constructor blockers
     DS_Dictionary(const DS_Dictionary& dictionary);                //Copy constructor - blocker
@@ -23,14 +23,24 @@ private:
                                                                    //Methods
     std::string cleanStringWhiteSpace(const std::string& _str);
 
+#define SYM_split "_ZN13DS_Dictionary5splitERKSsPKcRSt6vectorISsSaISsEE"
+
+    [[link_name(SYM_split)]]
     void split(
         const std::string& src,
         const char* token,
-        std::vector<std::string>& vect);
+        gdstd::vector<gdstd::string>& vect);
 
+#undef SYM_split
+
+#define SYM_splitWithForm "_ZN13DS_Dictionary13splitWithFormERKSsRSt6vectorISsSaISsEE"
+
+    [[link_name(SYM_splitWithForm)]]
     bool splitWithForm(
         const std::string& content,
-        std::vector<std::string>& strs);
+        gdstd::vector<gdstd::string>& strs);
+
+#undef SYM_splitWithForm
 
     bool rectFromString(
         const std::string& pszContent,
@@ -54,8 +64,21 @@ public:
     void stepBackToRootSubDict();
 
     unsigned int getNumKeys();
-    std::string getKey(unsigned int index);
-    std::vector<std::string> getAllKeys();
+
+#define SYM_getKey "_ZN13DS_Dictionary6getKeyEj"
+
+    [[link_name(SYM_getKey)]]
+    gdstd::string getKey(unsigned int index);
+
+#undef SYM_getKey
+
+#define SYM_getAllKeys "_ZN13DS_Dictionary10getAllKeysEv"
+
+    [[link_name(SYM_getAllKeys)]]
+    gdstd::vector<gdstd::string> getAllKeys();
+
+#undef SYM_getAllKeys
+
     unsigned int getIndexOfKey(const char* key);
     unsigned int getIndexOfKeyWithClosestAlphaNumericalMatch(const char* key);
 
@@ -69,9 +92,28 @@ public:
     std::string getStringForKey(const char* key);
     cocos2d::CCPoint getVec2ForKey(const char* key);
     cocos2d::CCRect getRectForKey(const char* key);
-    std::vector<std::string> getStringArrayForKey(const char* key);
-    std::vector<cocos2d::CCPoint> getVec2ArrayForKey(const char* key);
-    std::vector<cocos2d::CCRect> getRectArrayForKey(const char* key);
+
+#define SYM_getStringArrayForKey "_ZN13DS_Dictionary20getStringArrayForKeyEPKc"
+
+    [[link_name(SYM_getStringArrayForKey)]]
+    gdstd::vector<gdstd::string> getStringArrayForKey(const char* key);
+
+#undef SYM_getStringArrayForKey
+
+#define SYM_getVec2ArrayForKey "_ZN13DS_Dictionary18getVec2ArrayForKeyEPKc"
+
+    [[link_name(SYM_getVec2ArrayForKey)]]
+    gdstd::vector<cocos2d::CCPoint> getVec2ArrayForKey(const char* key);
+
+#undef SYM_getVec2ArrayForKey
+
+#define SYM_getRectArrayForKey "_ZN13DS_Dictionary18getRectArrayForKeyEPKc"
+
+    [[link_name(SYM_getRectArrayForKey)]]
+    gdstd::vector<cocos2d::CCRect> getRectArrayForKey(const char* key);
+
+#undef SYM_getRectArrayForKey
+
     cocos2d::CCArray *getArrayForKey(const char *key);
     cocos2d::CCDictionary *getDictForKey(const char *key);
     cocos2d::CCObject *getObjectForKey(const char *key);
@@ -90,12 +132,63 @@ public:
     void setVec2ForKey(const char* key, const cocos2d::CCPoint& value, bool alphaNumericallySorted);
     void setRectForKey(const char* key, const cocos2d::CCRect& value);
     void setRectForKey(const char* key, const cocos2d::CCRect& value, bool alphaNumericallySorted);
-    void setStringArrayForKey(const char* key, const std::vector<std::string>& value);
-    void setStringArrayForKey(const char* key, const std::vector<std::string>& value, bool alphaNumericallySorted);
-    void setVec2ArrayForKey(const char* key, const std::vector<cocos2d::CCPoint>& value);
-    void setVec2ArrayForKey(const char* key, const std::vector<cocos2d::CCPoint>& value, bool alphaNumericallySorted);
-    void setRectArrayForKey(const char* key, const std::vector<cocos2d::CCRect>& value);
-    void setRectArrayForKey(const char* key, const std::vector<cocos2d::CCRect>& value, bool alphaNumericallySorted);
+
+#define SYM_setStringArrayForKey "_ZN13DS_Dictionary20setStringArrayForKeyEPKcRKSt6vectorISsSaISsEE"
+
+    [[link_name(SYM_setStringArrayForKey)]]
+    void setStringArrayForKey(
+        const char* key,
+        const gdstd::vector<gdstd::string>& value);
+
+#undef SYM_setStringArrayForKey
+
+#define SYM_setStringArrayForKey "_ZN13DS_Dictionary20setStringArrayForKeyEPKcRKSt6vectorISsSaISsEEb"
+
+    [[link_name(SYM_setStringArrayForKey)]]
+    void setStringArrayForKey(
+        const char* key,
+        const gdstd::vector<gdstd::string>& value, bool alphaNumericallySorted);
+
+#undef SYM_setStringArrayForKey
+
+#define SYM_setVec2ArrayForKey "_ZN13DS_Dictionary18setVec2ArrayForKeyEPKcRKSt6vectorIN7cocos2d7CCPointESaIS4_EE"
+
+    [[link_name(SYM_setVec2ArrayForKey)]]
+    void setVec2ArrayForKey(
+        const char* key,
+        const gdstd::vector<cocos2d::CCPoint>& value);
+
+#undef SYM_setVec2ArrayForKey
+
+#define SYM_setVec2ArrayForKey "_ZN13DS_Dictionary18setVec2ArrayForKeyEPKcRKSt6vectorIN7cocos2d7CCPointESaIS4_EEb"
+
+    [[link_name(SYM_setVec2ArrayForKey)]]
+    void setVec2ArrayForKey(
+        const char* key,
+        const gdstd::vector<cocos2d::CCPoint>& value,
+        bool alphaNumericallySorted);
+
+#undef SYM_setVec2ArrayForKey
+
+#define SYM_setRectArrayForKey "_ZN13DS_Dictionary18setRectArrayForKeyEPKcRKSt6vectorIN7cocos2d6CCRectESaIS4_EE"
+
+    [[link_name(SYM_setRectArrayForKey)]]
+    void setRectArrayForKey(
+        const char* key,
+        const gdstd::vector<cocos2d::CCRect>& value);
+
+#undef SYM_setRectArrayForKey
+
+#define SYM_setRectArrayForKey "_ZN13DS_Dictionary18setRectArrayForKeyEPKcRKSt6vectorIN7cocos2d6CCRectESaIS4_EEb"
+
+    [[link_name(SYM_setRectArrayForKey)]]
+    void setRectArrayForKey(
+        const char* key,
+        const gdstd::vector<cocos2d::CCRect>& value,
+        bool alphaNumericallySorted);
+
+#undef SYM_setRectArrayForKey
+
     void setArrayForKey(const char *key, cocos2d::CCArray *value);
     void setDictForKey(const char *key, cocos2d::CCDictionary *value);
     void setObjectForKey(const char *key, cocos2d::CCObject *value);

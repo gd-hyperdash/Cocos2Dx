@@ -85,8 +85,13 @@ public:
      */
     bool supportsShareableVAO(void);
 
+#define SYM_checkForGLExtension "_ZN7cocos2d15CCConfiguration19checkForGLExtensionERKSs"
+
     /** returns whether or not an OpenGL is supported */
-    bool checkForGLExtension(const std::string &searchName);
+    [[link_name(SYM_checkForGLExtension)]]
+    bool checkForGLExtension(const gdstd::string &searchName);
+
+#undef SYM_checkForGLExtension
 
     bool init(void);
 

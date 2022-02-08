@@ -237,7 +237,7 @@ protected:
     void recreateLabel();
     
     unsigned int m_uFontSize;
-    std::string m_strFontName;
+    gdstd::string m_strFontName;
 };
 
 /** @brief CCMenuItemSprite accepts CCNode<CCRGBAProtocol> objects as items.

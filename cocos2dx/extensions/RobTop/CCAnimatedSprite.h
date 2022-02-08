@@ -63,7 +63,7 @@ public:
 
 	void queueAnimation(std::string animKey);
 	void runQueuedAnimation();
-	std::string queuedAnimation_;
+	gdstd::string queuedAnimation_;
 
 	void storeAnimation(
 		cocos2d::CCAnimate* animation,
@@ -191,7 +191,7 @@ public:
 
 	bool initWithType(const char *spriteType);
 	void loadType(const char *spriteType);
-	std::string type_;
+	gdstd::string type_;
 	
 	virtual void animationFinished(const char *animName);
 	virtual void animationFinishedO(CCObject *animName);

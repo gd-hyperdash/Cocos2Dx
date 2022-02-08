@@ -124,7 +124,7 @@ class CC_DLL CCBReader : public CCObject {
         CCBMemberVariableAssigner * mCCBMemberVariableAssigner;
         CCBSelectorResolver * mCCBSelectorResolver;
 
-        std::vector<CCString *> mStringCache;
+        gdstd::vector<CCString *> mStringCache;
         std::set<std::string> mLoadedSpriteSheets;
 
     public:

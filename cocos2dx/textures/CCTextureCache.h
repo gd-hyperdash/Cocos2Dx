@@ -218,14 +218,14 @@ protected:
     CCSize m_TextureSize;
     CCTexture2DPixelFormat m_PixelFormat;
 
-    std::string m_strFileName;
+    gdstd::string m_strFileName;
     CCImage::EImageFormat m_FmtImage;
 
     CCSize          m_size;
     CCTextAlignment m_alignment;
     CCVerticalTextAlignment m_vAlignment;
-    std::string     m_strFontName;
-    std::string     m_strText;
+    gdstd::string     m_strFontName;
+    gdstd::string     m_strText;
     float           m_fFontSize;
 };
 
