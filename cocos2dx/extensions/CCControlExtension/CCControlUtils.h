@@ -63,7 +63,7 @@ class CC_DLL CCColor3bObject : public CCObject
 {
 public:
     ccColor3B value;
-    CCColor3bObject(ccColor3B s_value):value(s_value){}
+    CCColor3bObject(ccColor3B s_value);
 };
 
 class CC_DLL CCControlUtils

@@ -135,7 +135,7 @@ public:
     static void purgeSharedSpriteFrameCache(void);
 
 private:
-    CCSpriteFrameCache(void) : m_pSpriteFrames(NULL), m_pSpriteFramesAliases(NULL){}
+    CCSpriteFrameCache(void);
 protected:
     CCDictionary* m_pSpriteFrames;
     CCDictionary* m_pSpriteFramesAliases;

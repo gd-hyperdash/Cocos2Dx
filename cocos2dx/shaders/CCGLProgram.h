@@ -151,7 +151,7 @@ public:
     // when opengl context lost, so don't call it.
     void reset();
     
-    inline const GLuint getProgram() { return m_uProgram; }
+    const GLuint getProgram();
 
 private:
     bool updateUniformLocation(unsigned int location, GLvoid* data, unsigned int bytes);

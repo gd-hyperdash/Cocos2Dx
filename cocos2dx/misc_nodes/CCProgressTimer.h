@@ -57,13 +57,13 @@ public:
     ~CCProgressTimer(void);
 
     /**    Change the percentage to change progress. */
-    inline CCProgressTimerType getType(void) { return m_eType; }
+    CCProgressTimerType getType(void);
 
     /** Percentages are from 0 to 100 */
-    inline float getPercentage(void) {return m_fPercentage; }
+    float getPercentage(void);
 
     /** The image to show the progress percentage, retain */
-    inline CCSprite* getSprite(void) { return m_pSprite; }
+    CCSprite* getSprite(void);
 
     /** Initializes a progress timer with the sprite as the shape the timer goes through */
     bool initWithSprite(CCSprite* sp);
@@ -83,8 +83,8 @@ public:
     virtual void setOpacityModifyRGB(bool bValue);
     virtual bool isOpacityModifyRGB(void);
     
-    inline bool isReverseDirection() { return m_bReverseDirection; };
-    inline void setReverseDirection(bool value) { m_bReverseDirection = value; };
+    bool isReverseDirection();
+    void setReverseDirection(bool value);
 
 public:
     /** Creates a progress timer with the sprite as the shape the timer goes through 

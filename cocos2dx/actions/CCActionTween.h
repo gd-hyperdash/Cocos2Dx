@@ -37,7 +37,7 @@ NS_CC_BEGIN
 class CCActionTweenDelegate
 {
 public:
-    virtual ~CCActionTweenDelegate() {}
+    virtual ~CCActionTweenDelegate();
     virtual void updateTweenAction(float value, const char* key) = 0;
 };
 

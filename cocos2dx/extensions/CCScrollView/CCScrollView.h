@@ -51,7 +51,7 @@ class CCScrollView;
 class CC_DLL CCScrollViewDelegate
 {
 public:
-    virtual ~CCScrollViewDelegate() {}
+    virtual ~CCScrollViewDelegate();
     virtual void scrollViewDidScroll(CCScrollView* view) = 0;
     virtual void scrollViewDidZoom(CCScrollView* view) = 0;
 };

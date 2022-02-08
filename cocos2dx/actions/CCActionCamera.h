@@ -55,7 +55,7 @@ public:
         ,m_fUpYOrig(0)
         ,m_fUpZOrig(0)
     {}
-    virtual ~CCActionCamera(){}
+    virtual ~CCActionCamera();
     // super methods
     virtual void startWithTarget(CCNode *pTarget);
     virtual CCActionInterval * reverse();
@@ -93,7 +93,7 @@ public:
         , m_fRadX(0.0)                        
         , m_fRadDeltaX(0.0)        
     {}
-    ~CCOrbitCamera(){}
+    ~CCOrbitCamera();
     /** creates a CCOrbitCamera action with radius, delta-radius,  z, deltaZ, x, deltaX 
     @deprecated: This interface will be deprecated sooner or later.
     */

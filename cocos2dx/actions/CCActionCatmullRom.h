@@ -95,13 +95,8 @@ public:
     
     virtual CCObject* copyWithZone(CCZone *zone);
     
-    inline CCArray* getControlPoints(){ return m_pControlPoints; }
-    inline void setControlPoints(CCArray *controlPoints)
-    {
-        CC_SAFE_RETAIN(controlPoints);
-        CC_SAFE_RELEASE(m_pControlPoints);
-        m_pControlPoints = controlPoints;
-    }
+    CCArray* getControlPoints();
+    void setControlPoints(CCArray *controlPoints);
 private:
     /** Array that contains the control points */
     CCArray *m_pControlPoints;
@@ -136,13 +131,8 @@ public:
     
     virtual void updatePosition(CCPoint &newPos);
     
-    inline CCPointArray* getPoints() { return m_pPoints; }
-    inline void  setPoints(CCPointArray* points) 
-    {
-        CC_SAFE_RETAIN(points);
-        CC_SAFE_RELEASE(m_pPoints);
-        m_pPoints = points;
-    }
+    CCPointArray* getPoints();
+    void setPoints(CCPointArray* points);
     
 protected:
     /** Array of control points */

@@ -10,7 +10,7 @@ class CCBReader;
 
 class CC_DLL CCControlLoader : public CCNodeLoader {
     public:
-        virtual ~CCControlLoader() {};
+        virtual ~CCControlLoader();
 
     protected:
         CCB_PURE_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(CCControl);

@@ -159,8 +159,8 @@ public:
     // super method
     void removeChild(CCNode* child, bool cleanup);
 
-    inline const char* getLayerName(){ return m_sLayerName.c_str(); }
-    inline void setLayerName(const char *layerName){ m_sLayerName = layerName; }
+    const char* getLayerName();
+    void setLayerName(const char *layerName);
 private:
     CCPoint positionForIsoAt(const CCPoint& pos);
     CCPoint positionForOrthoAt(const CCPoint& pos);

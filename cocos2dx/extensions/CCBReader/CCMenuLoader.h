@@ -10,7 +10,7 @@ class CCBReader;
 
 class CC_DLL CCMenuLoader : public CCLayerLoader {
     public:
-        virtual ~CCMenuLoader() {};
+        virtual ~CCMenuLoader();
         CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(CCMenuLoader, loader);
 
     protected:

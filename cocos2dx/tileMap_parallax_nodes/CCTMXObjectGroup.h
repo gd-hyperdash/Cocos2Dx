@@ -54,8 +54,8 @@ public:
     CCTMXObjectGroup();
     virtual ~CCTMXObjectGroup();
 
-    inline const char* getGroupName(){ return m_sGroupName.c_str(); }
-    inline void setGroupName(const char *groupName){ m_sGroupName = groupName; }
+    const char* getGroupName();
+    void setGroupName(const char *groupName);
 
     /** return the value for the specific property name */
     CCString *propertyNamed(const char* propertyName);

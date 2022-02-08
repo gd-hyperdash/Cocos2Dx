@@ -91,14 +91,14 @@ public:
     
     // properties 
     
-    inline unsigned int getName() { return m_uName; }
-    inline unsigned int getWidth() { return m_uWidth; }
-    inline unsigned int getHeight() { return m_uHeight; }
-    inline bool hasAlpha() { return m_bHasAlpha; }
-    inline unsigned int getNumberOfMipmaps() { return m_uNumberOfMipmaps; }
-    inline CCTexture2DPixelFormat getFormat() { return m_eFormat; }
-    inline bool isRetainName() { return m_bRetainName; }
-    inline void setRetainName(bool retainName) { m_bRetainName = retainName; }
+    unsigned int getName();
+    unsigned int getWidth();
+    unsigned int getHeight();
+    bool hasAlpha();
+    unsigned int getNumberOfMipmaps();
+    CCTexture2DPixelFormat getFormat();
+    bool isRetainName();
+    void setRetainName(bool retainName);
 
 private:
     bool unpackPVRData(unsigned char* data, unsigned int len);

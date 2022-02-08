@@ -101,38 +101,38 @@ public:
     // attribute
 
     /** Get current running Scene. Director can only run one Scene at the time */
-    inline CCScene* getRunningScene(void) { return m_pRunningScene; }
+    CCScene* getRunningScene(void);
 
     /** Get the FPS value */
-    inline double getAnimationInterval(void) { return m_dAnimationInterval; }
+    double getAnimationInterval(void);
     /** Set the FPS value. */
     virtual void setAnimationInterval(double dValue) = 0;
 
     /** Whether or not to display the FPS on the bottom-left corner */
-    inline bool isDisplayStats(void) { return m_bDisplayStats; }
+    bool isDisplayStats(void);
     /** Display the FPS on the bottom-left corner */
-    inline void setDisplayStats(bool bDisplayStats) { m_bDisplayStats = bDisplayStats; }
+    void setDisplayStats(bool bDisplayStats);
     
     /** seconds per frame */
-    inline float getSecondsPerFrame() { return m_fSecondsPerFrame; }
+    float getSecondsPerFrame();
 
     /** Get the CCEGLView, where everything is rendered */
-    inline CCEGLView* getOpenGLView(void) { return m_pobOpenGLView; }
+    CCEGLView* getOpenGLView(void);
     void setOpenGLView(CCEGLView *pobOpenGLView);
 
-    inline bool isNextDeltaTimeZero(void) { return m_bNextDeltaTimeZero; }
+    bool isNextDeltaTimeZero(void);
     void setNextDeltaTimeZero(bool bNextDeltaTimeZero);
 
     /** Whether or not the Director is paused */
-    inline bool isPaused(void) { return m_bPaused; }
+    bool isPaused(void);
 
     /** How many frames were called since the director started */
-    inline unsigned int getTotalFrames(void) { return m_uTotalFrames; }
+    unsigned int getTotalFrames(void);
     
     /** Sets an OpenGL projection
      @since v0.8.2
      */
-    inline ccDirectorProjection getProjection(void) { return m_eProjection; }
+    ccDirectorProjection getProjection(void);
     void setProjection(ccDirectorProjection kProjection);
 
     /** How many frames were called since the director started */
@@ -143,7 +143,7 @@ public:
      If the new scene replaces the old one, the it will receive the "cleanup" message.
      @since v0.99.0
      */
-    inline bool isSendCleanupToScene(void) { return m_bSendCleanupToScene; }
+    bool isSendCleanupToScene(void);
 
     /** This object will be visited after the main scene is visited.
      This object MUST implement the "visit" selector.
@@ -222,7 +222,7 @@ public:
      */
 
     /* end is key word of lua, use other name to export to lua. */
-    inline void endToLua(void){end();}
+    void endToLua(void);
 
     void end(void);
 

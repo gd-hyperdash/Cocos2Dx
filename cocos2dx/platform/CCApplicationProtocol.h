@@ -16,7 +16,7 @@ class CC_DLL CCApplicationProtocol
 {
 public:
 
-    virtual ~CCApplicationProtocol() {}
+    virtual ~CCApplicationProtocol();
 
     /**
     @brief    Implement CCDirector and CCScene init code here.

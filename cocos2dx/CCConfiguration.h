@@ -50,64 +50,40 @@ public:
 public:    
     
     /** OpenGL Max texture size. */
-    inline int getMaxTextureSize(void)
-    {
-        return m_nMaxTextureSize;
-    }
+    int getMaxTextureSize(void);
     
     /** OpenGL Max Modelview Stack Depth. */
-    inline int getMaxModelviewStackDepth(void)
-    {
-        return m_nMaxModelviewStackDepth;
-    }
+    int getMaxModelviewStackDepth(void);
 
     /** returns the maximum texture units
      @since v2.0.0
      */
-    inline int getMaxTextureUnits(void)
-    {
-        return m_nMaxTextureUnits;
-    }
+    int getMaxTextureUnits(void);
 
     /** Whether or not the GPU supports NPOT (Non Power Of Two) textures.
      OpenGL ES 2.0 already supports NPOT (iOS).
      
      @since v0.99.2
      */
-    inline bool supportsNPOT(void)
-    {
-        return m_bSupportsNPOT;
-    }
+    bool supportsNPOT(void);
 
     /** Whether or not PVR Texture Compressed is supported */
-    inline bool supportsPVRTC(void)
-    {
-        return m_bSupportsPVRTC;
-    }
+    bool supportsPVRTC(void);
 
     /** Whether or not BGRA8888 textures are supported.
      @since v0.99.2
      */
-    inline bool supportsBGRA8888(void)
-    {
-        return m_bSupportsBGRA8888;
-    }
+    bool supportsBGRA8888(void);
 
     /** Whether or not glDiscardFramebufferEXT is supported
      @since v0.99.2
      */
-    inline bool supportsDiscardFramebuffer(void)
-    {
-        return m_bSupportsDiscardFramebuffer;
-    }
+    bool supportsDiscardFramebuffer(void);
 
     /** Whether or not shareable VAOs are supported.
      @since v2.0.0
      */
-    inline bool supportsShareableVAO(void)
-    {
-        return m_bSupportsShareableVAO;
-    }
+    bool supportsShareableVAO(void);
 
     /** returns whether or not an OpenGL is supported */
     bool checkForGLExtension(const std::string &searchName);

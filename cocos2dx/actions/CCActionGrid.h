@@ -122,9 +122,9 @@ public:
     virtual CCActionInterval* reverse(void);
 
     /** get amplitude rate */
-    inline float getRate(void) { return m_fRate; }
+    float getRate(void);
     /** set amplitude rate */
-    inline void setRate(float fRate) { m_fRate = fRate; }
+    void setRate(float fRate);
 
 public:
     /** creates the action with an inner action that has the amplitude property, and a duration time 
@@ -148,9 +148,9 @@ public:
     bool initWithAction(CCAction *pAction, float duration);
 
     /** get amplitude rate */
-    inline float getRate(void) { return m_fRate; }
+    float getRate(void);
     /** set amplitude rate */
-    inline void setRate(float fRate) { m_fRate = fRate; }
+    void setRate(float fRate);
 
     virtual void startWithTarget(CCNode *pTarget);
     virtual void update(float time);
@@ -177,9 +177,9 @@ public:
     bool initWithAction(CCAction *pAction, float duration);
 
     /** get amplitude rate */
-    inline float getRate(void) { return m_fRate; }
+    float getRate(void);
     /** set amplitude rate */
-    inline void setRate(float fRate) { m_fRate = fRate; }
+    void setRate(float fRate);
 
     virtual void startWithTarget(CCNode *pTarget);
     virtual void update(float time);

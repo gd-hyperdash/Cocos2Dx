@@ -48,25 +48,15 @@ public:
     static CCSchedulerScriptHandlerEntry* entryWithHandler(int nHandler, float fInterval, bool bPaused);
     ~CCSchedulerScriptHandlerEntry(void);
     
-    inline cocos2d::CCTimer* getTimer(void) {
-        return m_pTimer;
-    }
+    cocos2d::CCTimer* getTimer(void);
     
-    inline bool isPaused(void) {
-        return m_bPaused;
-    }
+    bool isPaused(void);
     
-    inline int getEntryID(void) {
-        return m_nEntryID;
-    }
+    int getEntryID(void);
     
-    inline void markedForDeletion(void) {
-        m_bMarkedForDeletion = true;
-    }
+    void markedForDeletion(void);
     
-    inline bool isMarkedForDeletion(void) {
-        return m_bMarkedForDeletion;
-    }
+    bool isMarkedForDeletion(void);
     
 private:
     CCSchedulerScriptHandlerEntry(void);
@@ -87,21 +77,13 @@ public:
     static CCTouchScriptHandlerEntry* entryWithHandler(int nHandler, bool bIsMultiTouches, int nPriority, bool bSwallowsTouches);
     ~CCTouchScriptHandlerEntry(void);
     
-    inline int getHandler(void) {
-        return m_nHandler;
-    }
+    int getHandler(void);
     
-    inline bool isMultiTouches(void) {
-        return m_bIsMultiTouches;
-    }
+    bool isMultiTouches(void);
     
-    inline int getPriority(void) {
-        return m_nPriority;
-    }
+    int getPriority(void);
     
-    inline bool getSwallowsTouches(void) {
-        return m_bSwallowsTouches;
-    }
+    bool getSwallowsTouches(void);
     
 private:
     CCTouchScriptHandlerEntry(void);

@@ -28,7 +28,7 @@ class CCBReader;
 
 class CC_DLL CCNodeLoader : public CCObject {
     public:
-        virtual ~CCNodeLoader() {};
+        virtual ~CCNodeLoader();
         CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(CCNodeLoader, loader);
 
         virtual CCNode * loadCCNode(CCNode *, CCBReader * pCCBReader);

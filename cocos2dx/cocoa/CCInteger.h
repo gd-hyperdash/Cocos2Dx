@@ -13,22 +13,13 @@ NS_CC_BEGIN
 class CC_DLL CCInteger : public CCObject
 {
 public:
-    CCInteger(int v)
-        : m_nValue(v) {}
-    int getValue() const {return m_nValue;}
+    CCInteger(int v);
+    int getValue() const;
 
     // @deprecated: This interface will be deprecated sooner or later.
-    CC_DEPRECATED_ATTRIBUTE static CCInteger* integerWithInt(int v)
-    {
-        return CCInteger::create(v);
-    }
+    CC_DEPRECATED_ATTRIBUTE static CCInteger* integerWithInt(int v);
 
-    static CCInteger* create(int v)
-    {
-        CCInteger* pRet = new CCInteger(v);
-        pRet->autorelease();
-        return pRet;
-    }
+    static CCInteger* create(int v);
 private:
     int m_nValue;
 };

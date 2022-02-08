@@ -75,7 +75,7 @@ public:
     virtual void touchesEnded(CCSet* touches, CCEvent* pEvent) = 0;
     virtual void touchesCancelled(CCSet* touches, CCEvent* pEvent) = 0;
 
-    virtual ~EGLTouchDelegate() {}
+    virtual ~EGLTouchDelegate();
 };
 
 class CCTouchHandler;

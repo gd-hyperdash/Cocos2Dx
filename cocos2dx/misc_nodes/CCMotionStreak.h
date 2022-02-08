@@ -88,14 +88,12 @@ public:
     virtual bool isOpacityModifyRGB(void);
 
     /** When fast mode is enbled, new points are added faster but with lower precision */
-    inline bool isFastMode() { return m_bFastMode; }
-    inline void setFastMode(bool bFastMode) { m_bFastMode = bFastMode; }
+    bool isFastMode();
+    void setFastMode(bool bFastMode);
 
-    inline bool isStartingPositionInitialized() { return m_bStartingPositionInitialized; }
-    inline void setStartingPositionInitialized(bool bStartingPositionInitialized) 
-    { 
-        m_bStartingPositionInitialized = bStartingPositionInitialized; 
-    }
+    bool isStartingPositionInitialized();
+
+    void setStartingPositionInitialized(bool bStartingPositionInitialized);
 protected:
     bool m_bFastMode;
     bool m_bStartingPositionInitialized;

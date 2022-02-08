@@ -138,26 +138,18 @@ public: virtual const varType& get##funName(void) const { return varName; }
  */
 #define CC_SYNTHESIZE(varType, varName, funName)\
 protected: varType varName;\
-public: virtual varType get##funName(void) const { return varName; }\
-public: virtual void set##funName(varType var){ varName = var; }
+public: virtual varType get##funName(void) const;\
+public: virtual void set##funName(varType var);
 
 #define CC_SYNTHESIZE_PASS_BY_REF(varType, varName, funName)\
 protected: varType varName;\
-public: virtual const varType& get##funName(void) const { return varName; }\
-public: virtual void set##funName(const varType& var){ varName = var; }
+public: virtual const varType& get##funName(void) const;\
+public: virtual void set##funName(const varType& var);
 
 #define CC_SYNTHESIZE_RETAIN(varType, varName, funName)    \
 private: varType varName; \
-public: virtual varType get##funName(void) const { return varName; } \
-public: virtual void set##funName(varType var)   \
-{ \
-    if (varName != var) \
-    { \
-        CC_SAFE_RETAIN(var); \
-        CC_SAFE_RELEASE(varName); \
-        varName = var; \
-    } \
-} 
+public: virtual varType get##funName(void) const; \
+public: virtual void set##funName(varType var);
 
 #define CC_SAFE_DELETE(p)            do { if(p) { delete (p); (p) = 0; } } while(0)
 #define CC_SAFE_DELETE_ARRAY(p)     do { if(p) { delete[] (p); (p) = 0; } } while(0)

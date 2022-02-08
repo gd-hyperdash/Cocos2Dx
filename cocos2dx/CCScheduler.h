@@ -54,9 +54,9 @@ public:
     CCTimer(void);
 
     /** get interval in seconds */
-    inline float getInterval(void) { return m_fInterval; }
+    float getInterval(void);
     /** set interval in seconds */
-    inline void setInterval(float fInterval){ m_fInterval = fInterval; }
+    void setInterval(float fInterval);
 
     /** Initializes a timer with a target and a selector. */
     bool initWithTarget(CCObject *pTarget, SEL_SCHEDULE pfnSelector);
@@ -122,7 +122,7 @@ public:
     CCScheduler();
     ~CCScheduler(void);
 
-    inline float getTimeScale(void) { return m_fTimeScale; }
+    float getTimeScale(void);
     /** Modifies the time of all scheduled callbacks.
     You can use this property to create a 'slow motion' or 'fast forward' effect.
     Default is 1.0. To create a 'slow motion' effect, use values below 1.0.
@@ -130,7 +130,7 @@ public:
     @since v0.8
     @warning It will affect EVERY scheduled selector / action.
     */
-    inline void setTimeScale(float fTimeScale) { m_fTimeScale = fTimeScale; }
+    void setTimeScale(float fTimeScale);
 
     /** 'update' the scheduler.
      You should NEVER call this method, unless you know what you are doing.

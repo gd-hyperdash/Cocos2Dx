@@ -81,20 +81,20 @@ public:
     */
     virtual void update(float time);
     
-    inline CCNode* getTarget(void) { return m_pTarget; }
+    CCNode* getTarget(void);
     /** The action will modify the target properties. */
-    inline void setTarget(CCNode *pTarget) { m_pTarget = pTarget; }
+    void setTarget(CCNode *pTarget);
     
-    inline CCNode* getOriginalTarget(void) { return m_pOriginalTarget; } 
+    CCNode* getOriginalTarget(void);
     /** Set the original target, since target can be nil.
     Is the target that were used to run the action. Unless you are doing something complex, like CCActionManager, you should NOT call this method.
     The target is 'assigned', it is not 'retained'.
     @since v0.8.2
     */
-    inline void setOriginalTarget(CCNode *pOriginalTarget) { m_pOriginalTarget = pOriginalTarget; }
+    void setOriginalTarget(CCNode *pOriginalTarget);
 
-    inline int getTag(void) { return m_nTag; }
-    inline void setTag(int nTag) { m_nTag = nTag; }
+    int getTag(void);
+    void setTag(int nTag);
 
 public:
     /** Allocates and initializes the action 
@@ -128,14 +128,12 @@ protected:
 class CC_DLL CCFiniteTimeAction : public CCAction
 {
 public:
-    CCFiniteTimeAction()
-        : m_fDuration(0)
-    {}
-    virtual ~CCFiniteTimeAction(){}
+    CCFiniteTimeAction();
+    virtual ~CCFiniteTimeAction();
     //! get duration in seconds of the action
-    inline float getDuration(void) { return m_fDuration; }
+    float getDuration(void);
     //! set duration in seconds of the action
-    inline void setDuration(float duration) { m_fDuration = duration; }
+    void setDuration(float duration);
 
     /** returns a reversed action */
     virtual CCFiniteTimeAction* reverse(void);
@@ -162,9 +160,9 @@ public:
     {}
     virtual ~CCSpeed(void);
 
-    inline float getSpeed(void) { return m_fSpeed; }
+    float getSpeed(void);
     /** alter the speed of the inner function in runtime */
-    inline void setSpeed(float fSpeed) { m_fSpeed = fSpeed; }
+    void setSpeed(float fSpeed);
 
     /** initializes the action */
     bool initWithAction(CCActionInterval *pAction, float fSpeed);
@@ -178,10 +176,7 @@ public:
 
     void setInnerAction(CCActionInterval *pAction);
 
-    inline CCActionInterval* getInnerAction()
-    {
-        return m_pInnerAction;
-    }
+    CCActionInterval* getInnerAction();
 
 public:
     /** creates the action 
@@ -219,9 +214,9 @@ public:
     {}
     virtual ~CCFollow(void);
     
-    inline bool isBoundarySet(void) { return m_bBoundarySet; }
+    bool isBoundarySet(void);
     /** alter behavior - turn on/off boundary */
-    inline void setBoudarySet(bool bValue) { m_bBoundarySet = bValue; }
+    void setBoudarySet(bool bValue);
 
     /** initializes the action with a set boundary */
     bool initWithTarget(CCNode *pFollowedNode, const CCRect& rect = CCRectZero);

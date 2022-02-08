@@ -41,7 +41,7 @@ NS_CC_BEGIN
 class CC_DLL CCThread
 {
 public:
-    CCThread() : m_pAutoreasePool(0) {}
+    CCThread();
     ~CCThread();
 
     void createAutoreleasePool();

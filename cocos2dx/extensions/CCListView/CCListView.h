@@ -110,8 +110,8 @@ typedef struct _CCListViewProtrolData
 class CC_DLL CCListViewDelegate
 {
 public :
-    CCListViewDelegate(){};
-    virtual ~CCListViewDelegate(){};
+    CCListViewDelegate();
+    virtual ~CCListViewDelegate();
 
     virtual void CCListView_numberOfCells(CCListView *listView, CCListViewProtrolData *data)=0;
     virtual void CCListView_cellForRow(CCListView *listView, CCListViewProtrolData *data)=0;
@@ -144,17 +144,17 @@ public:
     CCListViewCell *cellAtRow(unsigned int nRow);
 
     CCListViewSlideDir getSlideDir(CCPoint ptTouchBegan, CCPoint ptTouchEnd);
-    inline CCListViewSlideDir getSlideDir(void) { return m_nSlideDir; }
+    CCListViewSlideDir getSlideDir(void);
 
-    inline CCListViewCellSeparatorStyle getSeparatorStyle(void) { return m_nSeparatorStyle; }
-    inline void setSeparatorStyle(CCListViewCellSeparatorStyle style) { m_nSeparatorStyle = style; }
-    inline CCListViewMode getMode(void) { return m_nMode; }
+    CCListViewCellSeparatorStyle getSeparatorStyle(void);
+    void setSeparatorStyle(CCListViewCellSeparatorStyle style);
+    CCListViewMode getMode(void);
 
-    inline void setListViewParent(CCListView *pParent) { m_pListViewParent = pParent; }
-    inline CCListView *getListViewParent(void) { return m_pListViewParent; }
+    void setListViewParent(CCListView *pParent);
+    CCListView *getListViewParent(void);
 
-    inline void setEnabled(bool bEnabled) { m_bIsEnabled = bEnabled; }
-    inline bool isEnabled(void) { return m_bIsEnabled; }
+    void setEnabled(bool bEnabled);
+    bool isEnabled(void);
 
     // un
     void setDelegate(const CCListViewDelegate *pDelegate) { m_pDelegate = const_cast<CCListViewDelegate*>(pDelegate);}

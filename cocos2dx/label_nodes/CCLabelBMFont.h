@@ -121,8 +121,8 @@ public:
     /** initializes a BitmapFontConfiguration with a FNT file */
     bool initWithFNTfile(const char *FNTfile);
     
-    inline const char* getAtlasName(){ return m_sAtlasName.c_str(); }
-    inline void setAtlasName(const char* atlasName) { m_sAtlasName = atlasName; }
+    const char* getAtlasName();
+    void setAtlasName(const char* atlasName);
 private:
     bool parseConfigFile(const char *controlFile);
     void parseCharacterDefinition(std::string line, ccBMFontDef *characterDefinition);

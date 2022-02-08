@@ -54,14 +54,14 @@ class CC_DLL CCListViewCell : public CCLayerColor
         void selected(void);
         void unselected(void);
 
-        inline CCListViewCellSeparatorStyle getSeparatorStyle(void) { return m_nSeparatorStyle; }
-        inline void setSeparatorStyle(CCListViewCellSeparatorStyle style) { m_nSeparatorStyle = style; }
+        CCListViewCellSeparatorStyle getSeparatorStyle(void);
+        void setSeparatorStyle(CCListViewCellSeparatorStyle style);
 
-        inline ccColor4B getSelectionColor(void) { return m_selectionColor; }
-        inline void setSelectionColor(ccColor4B color) { m_selectionColor = color; }
+        ccColor4B getSelectionColor(void);
+        void setSelectionColor(ccColor4B color);
 
-        inline ccColor3B getSeparatorLineColor(void) { return m_separatorLineColor; }
-        inline void setSeparatorLineColor(ccColor3B color) { m_separatorLineColor = color; }
+        ccColor3B getSeparatorLineColor(void);
+        void setSeparatorLineColor(ccColor3B color);
 
     public:
         virtual bool initWithColorWidthHeight(ccColor4B color, GLfloat width, GLfloat height);
@@ -70,7 +70,7 @@ class CC_DLL CCListViewCell : public CCLayerColor
         virtual void setOpacity(GLubyte var);
 
     private:
-        inline CCListView *getOwner(void) { return (CCListView*)(this->getParent()->getParent()); }
+        CCListView *getOwner(void);
 
     private:
         CCListViewCellSeparatorStyle    m_nSeparatorStyle;

@@ -67,7 +67,7 @@ public:
         : m_cOpacity(0)
         , m_pSelectedItem(NULL)
     {}
-    virtual ~CCMenu(){}
+    virtual ~CCMenu();
 
     /** creates an empty CCMenu 
     @deprecated: This interface will be deprecated sooner or later.

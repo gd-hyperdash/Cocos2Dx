@@ -164,8 +164,8 @@ protected:
 class CC_DLL CCMenuItemAtlasFont : public CCMenuItemLabel
 {
 public:
-    CCMenuItemAtlasFont(){}
-    virtual ~CCMenuItemAtlasFont(){}
+    CCMenuItemAtlasFont();
+    virtual ~CCMenuItemAtlasFont();
     /** creates a menu item from a string and atlas with a target/selector 
     @deprecated: This interface will be deprecated sooner or later.
     */
@@ -189,8 +189,8 @@ public:
 class CC_DLL CCMenuItemFont : public CCMenuItemLabel
 {
 public:
-    CCMenuItemFont() : m_uFontSize(0), m_strFontName(""){}
-    virtual ~CCMenuItemFont(){}
+    CCMenuItemFont();
+    virtual ~CCMenuItemFont();
     /** set default font size */
     static void setFontSize(unsigned int s);
     /** get default font size */
@@ -314,8 +314,8 @@ protected:
 class CC_DLL CCMenuItemImage : public CCMenuItemSprite
 {
 public:
-    CCMenuItemImage(){}
-    virtual ~CCMenuItemImage(){}
+    CCMenuItemImage();
+    virtual ~CCMenuItemImage();
     /** creates a menu item with a normal and selected image
     @deprecated: This interface will be deprecated sooner or later.
     */

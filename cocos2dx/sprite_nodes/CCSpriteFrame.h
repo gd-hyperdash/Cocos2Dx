@@ -57,14 +57,14 @@ class CC_DLL CCSpriteFrame : public CCObject
 public:
     // attributes
 
-    inline const CCRect& getRectInPixels(void) { return m_obRectInPixels; }
+    const CCRect& getRectInPixels(void);
     void setRectInPixels(const CCRect& rectInPixels);
 
-    inline bool isRotated(void) { return m_bRotated; }
-    inline void setRotated(bool bRotated) { m_bRotated = bRotated; }
+    bool isRotated(void);
+    void setRotated(bool bRotated);
 
     /** get rect of the frame */
-    inline const CCRect& getRect(void) { return m_obRect; }
+    const CCRect& getRect(void);
     /** set rect of the frame */
     void setRect(const CCRect& rect);
 
@@ -74,14 +74,14 @@ public:
     void setOffsetInPixels(const CCPoint& offsetInPixels);
 
     /** get original size of the trimmed image */
-    inline const CCSize& getOriginalSizeInPixels(void) { return m_obOriginalSizeInPixels; }
+    const CCSize& getOriginalSizeInPixels(void);
     /** set original size of the trimmed image */
-    inline void setOriginalSizeInPixels(const CCSize& sizeInPixels) { m_obOriginalSizeInPixels = sizeInPixels; }
+    void setOriginalSizeInPixels(const CCSize& sizeInPixels);
 
     /** get original size of the trimmed image */
-    inline const CCSize& getOriginalSize(void) { return m_obOriginalSize; }
+    const CCSize& getOriginalSize(void);
     /** set original size of the trimmed image */
-    inline void setOriginalSize(const CCSize& sizeInPixels) { m_obOriginalSize = sizeInPixels; }
+    void setOriginalSize(const CCSize& sizeInPixels);
 
     /** get texture of the frame */
     CCTexture2D* getTexture(void);

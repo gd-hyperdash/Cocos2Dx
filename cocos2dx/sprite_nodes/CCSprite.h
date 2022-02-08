@@ -88,28 +88,28 @@ public:
     // attributes
 
     /** whether or not the Sprite needs to be updated in the Atlas */
-    inline virtual bool isDirty(void) { return m_bDirty; }
+    virtual bool isDirty(void);
     /** make the Sprite to be updated in the Atlas. */
-    inline virtual void setDirty(bool bDirty) { m_bDirty = bDirty; }
+    virtual void setDirty(bool bDirty);
 
     /** get the quad (tex coords, vertex coords and color) information */
-    inline ccV3F_C4B_T2F_Quad getQuad(void) { return m_sQuad; }
+    ccV3F_C4B_T2F_Quad getQuad(void);
 
     /** returns whether or not the texture rectangle is rotated */
-    inline bool isTextureRectRotated(void) { return m_bRectRotated; }
+    bool isTextureRectRotated(void);
     
     /** Set the index used on the TextureAtlas. */
-    inline unsigned int getAtlasIndex(void) { return m_uAtlasIndex; }
+    unsigned int getAtlasIndex(void);
     /** Set the index used on the TextureAtlas.
     @warning Don't modify this value unless you know what you are doing 
     */
-    inline void setAtlasIndex(unsigned int uAtlasIndex) { m_uAtlasIndex = uAtlasIndex; }
+    void setAtlasIndex(unsigned int uAtlasIndex);
 
     /** returns the rect of the CCSprite in points */
-    inline const CCRect& getTextureRect(void) { return m_obRect; }
+    const CCRect& getTextureRect(void);
 
-    inline CCTextureAtlas* getTextureAtlas(void) { return m_pobTextureAtlas; }
-    inline void setTextureAtlas(CCTextureAtlas *pobTextureAtlas) { m_pobTextureAtlas = pobTextureAtlas; }
+    CCTextureAtlas* getTextureAtlas(void);
+    void setTextureAtlas(CCTextureAtlas *pobTextureAtlas);
 
     CCSpriteBatchNode* getSpriteBatchNode(void);
     void setSpriteBatchNode(CCSpriteBatchNode *pobSpriteBatchNode);
@@ -117,12 +117,12 @@ public:
     /** Get offset position of the sprite. Calculated automatically by editors like Zwoptex.
      @since v0.99.0
      */
-    inline const CCPoint& getOffsetPosition(void) { return m_obOffsetPosition; }
+    const CCPoint& getOffsetPosition(void);
 
     /** conforms to CCTextureProtocol protocol */
-    inline ccBlendFunc getBlendFunc(void) { return m_sBlendFunc; }
+    ccBlendFunc getBlendFunc(void);
     /** conforms to CCTextureProtocol protocol */
-    inline void setBlendFunc(ccBlendFunc blendFunc) { m_sBlendFunc = blendFunc; }
+    void setBlendFunc(ccBlendFunc blendFunc);
 
 public:
     /** Creates an sprite with a texture.

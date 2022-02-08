@@ -238,12 +238,12 @@ class CC_DLL CCWavesTiles3D : public CCTiledGrid3DAction
 {
 public:
     /** waves amplitude */
-    inline float getAmplitude(void) { return m_fAmplitude; }
-    inline void setAmplitude(float fAmplitude) { m_fAmplitude = fAmplitude; }
+    float getAmplitude(void);
+    void setAmplitude(float fAmplitude);
 
     /** waves amplitude rate */
-    inline float getAmplitudeRate(void) { return m_fAmplitudeRate; }
-    inline void setAmplitudeRate(float fAmplitudeRate) { m_fAmplitudeRate = fAmplitudeRate; }
+    float getAmplitudeRate(void);
+    void setAmplitudeRate(float fAmplitudeRate);
 
     /** initializes the action with a number of waves, the waves amplitude, the grid size and the duration */
     bool initWithWaves(int wav, float amp, const ccGridSize& gridSize, float duration);
@@ -271,12 +271,12 @@ class CC_DLL CCJumpTiles3D : public CCTiledGrid3DAction
 {
 public:
     /** amplitude of the sin*/
-    inline float getAmplitude(void) { return m_fAmplitude; }
-    inline void setAmplitude(float fAmplitude) { m_fAmplitude = fAmplitude; }
+    float getAmplitude(void);
+    void setAmplitude(float fAmplitude);
 
     /** amplitude rate */
-    inline float getAmplitudeRate(void) { return m_fAmplitudeRate; }
-    inline void setAmplitudeRate(float fAmplitudeRate) { m_fAmplitudeRate = fAmplitudeRate; }
+    float getAmplitudeRate(void);
+    void setAmplitudeRate(float fAmplitudeRate);
 
     /** initializes the action with the number of jumps, the sin amplitude, the grid size and the duration */
     bool initWithJumps(int j, float amp, const ccGridSize& gridSize, float duration);

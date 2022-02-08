@@ -52,23 +52,23 @@ public:
     virtual ~CCGridBase(void);
 
     /** wheter or not the grid is active */
-    inline bool isActive(void) { return m_bActive; }
+    bool isActive(void);
     void setActive(bool bActive);
 
     /** number of times that the grid will be reused */
-    inline int getReuseGrid(void) { return m_nReuseGrid; }
-    inline void setReuseGrid(int nReuseGrid) { m_nReuseGrid = nReuseGrid; }
+    int getReuseGrid(void);
+    void setReuseGrid(int nReuseGrid);
 
     /** size of the grid */
-    inline const ccGridSize& getGridSize(void) { return m_sGridSize; }
-    inline void setGridSize(const ccGridSize& gridSize) { m_sGridSize = gridSize; }
+    const ccGridSize& getGridSize(void);
+    void setGridSize(const ccGridSize& gridSize);
 
     /** pixels between the grids */
-    inline const CCPoint& getStep(void) { return m_obStep; }
-    inline void setStep(const CCPoint& step) { m_obStep = step; }
+    const CCPoint& getStep(void);
+    void setStep(const CCPoint& step);
 
     /** is texture flipped */
-    inline bool isTextureFlipped(void) { return m_bIsTextureFlipped; }
+    bool isTextureFlipped(void);
     void setTextureFlipped(bool bFlipped);
 
     bool initWithSize(const ccGridSize& gridSize, CCTexture2D *pTexture, bool bFlipped);

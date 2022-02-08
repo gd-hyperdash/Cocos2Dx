@@ -10,7 +10,7 @@ class CCBReader;
 
 class CC_DLL CCLayerLoader : public CCNodeLoader {
     public:
-        virtual ~CCLayerLoader() {};
+        virtual ~CCLayerLoader();
         CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(CCLayerLoader, loader);
 
     protected:

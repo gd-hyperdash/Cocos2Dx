@@ -62,7 +62,7 @@ class CC_DLL CCActionInterval : public CCFiniteTimeAction
 {
 public:
     /** how many seconds had elapsed since the actions started to run. */
-    inline float getElapsed(void) { return m_elapsed; }
+    float getElapsed(void);
 
     /** initializes the action */
     bool initWithDuration(float d);
@@ -156,20 +156,9 @@ public:
     virtual bool isDone(void);
     virtual CCActionInterval* reverse(void);
 
-    inline void setInnerAction(CCFiniteTimeAction *pAction)
-    {
-        if (m_pInnerAction != pAction)
-        {
-            CC_SAFE_RETAIN(pAction);
-            CC_SAFE_RELEASE(m_pInnerAction);
-            m_pInnerAction = pAction;
-        }
-    }
+    void setInnerAction(CCFiniteTimeAction *pAction);
 
-    inline CCFiniteTimeAction* getInnerAction()
-    {
-        return m_pInnerAction;
-    }
+    CCFiniteTimeAction* getInnerAction();
 
 public:
     /** creates a CCRepeat action. Times is an unsigned integer between 1 and pow(2,30) 
@@ -208,20 +197,9 @@ public:
     virtual bool isDone(void);
     virtual CCActionInterval* reverse(void);
 
-    inline void setInnerAction(CCActionInterval *pAction)
-    {
-        if (m_pInnerAction != pAction)
-        {
-            CC_SAFE_RELEASE(m_pInnerAction);
-            m_pInnerAction = pAction;
-            CC_SAFE_RETAIN(m_pInnerAction);
-        }
-    }
+    void setInnerAction(CCActionInterval *pAction);
 
-    inline CCActionInterval* getInnerAction()
-    {
-        return m_pInnerAction;
-    }
+    CCActionInterval* getInnerAction();
 
 public:
     /** creates the action 

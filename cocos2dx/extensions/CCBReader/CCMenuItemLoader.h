@@ -10,7 +10,7 @@ class CCBReader;
 
 class CC_DLL CCMenuItemLoader : public CCNodeLoader {
     public:
-        virtual ~CCMenuItemLoader() {};
+        virtual ~CCMenuItemLoader();
 
     protected:
         CCB_PURE_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(CCMenuItem);

@@ -109,7 +109,7 @@ public:
     void beginWithClear(float r, float g, float b, float a, float depthValue, int stencilValue);
 
     /** end is key word of lua, use other name to export to lua. */
-    inline void endToLua(){ end();};
+    void endToLua();
 
     /** ends grabbing*/
     void end();

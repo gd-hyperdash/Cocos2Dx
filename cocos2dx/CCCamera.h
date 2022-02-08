@@ -87,9 +87,9 @@ public:
     const char* description(void);
 
     /** sets the dirty value */
-    inline void setDirty(bool bValue) { m_bDirty = bValue; }
+    void setDirty(bool bValue);
     /** get the dirty value */
-    inline bool isDirty(void) { return m_bDirty; }
+    bool isDirty(void);
 
     /** sets the camera in the default position */
     void restore(void);

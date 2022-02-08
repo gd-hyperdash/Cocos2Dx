@@ -45,7 +45,7 @@ class CC_DLL CCActionInstant : public CCFiniteTimeAction //<NSCopying>
 {
 public:
     CCActionInstant();
-    virtual ~CCActionInstant(){}
+    virtual ~CCActionInstant();
     // CCAction methods
     virtual CCObject* copyWithZone(CCZone *pZone);
     virtual bool isDone(void);
@@ -60,8 +60,8 @@ public:
 class CC_DLL CCShow : public CCActionInstant
 {
 public:
-    CCShow(){}
-    virtual ~CCShow(){}
+    CCShow();
+    virtual ~CCShow();
     //super methods
     virtual void update(float time);
     virtual CCFiniteTimeAction * reverse(void);
@@ -85,8 +85,8 @@ public:
 class CC_DLL CCHide : public CCActionInstant
 {
 public:
-    CCHide(){}
-    virtual ~CCHide(){}
+    CCHide();
+    virtual ~CCHide();
     //super methods
     virtual void update(float time);
     virtual CCFiniteTimeAction * reverse(void);
@@ -107,8 +107,8 @@ public:
 class CC_DLL CCToggleVisibility : public CCActionInstant
 {
 public:
-    CCToggleVisibility(){}
-    virtual ~CCToggleVisibility(){}
+    CCToggleVisibility();
+    virtual ~CCToggleVisibility();
     //super method
     virtual void update(float time);
     virtual CCObject* copyWithZone(CCZone *pZone);
@@ -133,7 +133,7 @@ public:
     CCFlipX()
         :m_bFlipX(false)
     {}
-    virtual ~CCFlipX(){}
+    virtual ~CCFlipX();
 
     /** create the action 
     @deprecated: This interface will be deprecated sooner or later.
@@ -164,7 +164,7 @@ public:
     CCFlipY()
         :m_bFlipY(false)
     {}
-    virtual ~CCFlipY(){}
+    virtual ~CCFlipY();
     
     /** create the action 
     @deprecated: This interface will be deprecated sooner or later.
@@ -190,8 +190,8 @@ protected:
 class CC_DLL CCPlace : public CCActionInstant //<NSCopying>
 {
 public:
-    CCPlace(){}
-    virtual ~CCPlace(){}
+    CCPlace();
+    virtual ~CCPlace();
     /** creates a Place action with a position 
     @deprecated: This interface will be deprecated sooner or later.
     */
@@ -244,20 +244,9 @@ public:
     virtual void update(float time);
     CCObject * copyWithZone(CCZone *pZone);
 
-    inline CCObject* getTargetCallback()
-    {
-        return m_pSelectorTarget;
-    }
+    CCObject* getTargetCallback();
 
-    inline void setTargetCallback(CCObject* pSel)
-    {
-        if (pSel != m_pSelectorTarget)
-        {
-            CC_SAFE_RETAIN(pSel);
-            CC_SAFE_RELEASE(m_pSelectorTarget);
-            m_pSelectorTarget = pSel; 
-        }
-    }
+    void setTargetCallback(CCObject* pSel);
 
 protected:
     /** Target that will be called */
@@ -279,8 +268,8 @@ N means Node
 class CC_DLL CCCallFuncN : public CCCallFunc
 {
 public:
-    CCCallFuncN(){}
-    virtual ~CCCallFuncN(){}
+    CCCallFuncN();
+    virtual ~CCCallFuncN();
     /** creates the action with the callback 
     @deprecated: This interface will be deprecated sooner or later.
     typedef void (CCObject::*SEL_CallFuncN)(CCNode*);
@@ -361,20 +350,9 @@ public:
     virtual CCObject* copyWithZone(CCZone *pZone);
     virtual void execute();
 
-    inline CCObject* getObject()
-    {
-        return m_pObject;
-    }
+    CCObject* getObject();
 
-    inline void setObject(CCObject* pObj)
-    {
-        if (pObj != m_pObject)
-        {
-            CC_SAFE_RELEASE(m_pObject);
-            m_pObject = pObj;
-            CC_SAFE_RETAIN(m_pObject);
-        }
-    }
+    void setObject(CCObject* pObj);
 
 protected:
     /** object to be passed as argument */

@@ -67,31 +67,14 @@ public:
         m_pObject = pObject;
     }
 
-    inline const char* getStrKey() const
-    {
-        CCAssert(m_szKey[0] != '\0', "Should not call this function for integer dictionary");
-        return m_szKey;
-    }
+    const char* getStrKey() const;
 
-    inline int getIntKey() const 
-    {
-        CCAssert(m_szKey[0] == '\0', "Should not call this function for string dictionary");
-        return m_iKey;
-    }
+    int getIntKey() const;
 
-    inline CCObject* getObject() const
-    {
-        return m_pObject;
-    }
+    CCObject* getObject() const;
 
 private:
-    inline void init()
-    {
-        m_iKey = 0;
-        m_pObject = NULL;
-        memset(m_szKey, 0, sizeof(m_szKey));
-        memset(&hh, 0, sizeof(hh));
-    }
+    void init();
 
 private:
     char m_szKey[MAX_KEY_LEN+1];  /** hash key of string type*/
