@@ -125,7 +125,8 @@ class CC_DLL CCBReader : public CCObject {
         CCBSelectorResolver * mCCBSelectorResolver;
 
         gdstd::vector<CCString *> mStringCache;
-        std::set<std::string> mLoadedSpriteSheets;
+        // TODO: see https://github.com/gd-hyperdash/gdstl/issues/2
+        // s td::set<s td::string> mLoadedSpriteSheets;
 
     public:
         CCBReader(CCNodeLoaderLibrary * pCCNodeLoaderLibrary, CCBMemberVariableAssigner * pCCBMemberVariableAssigner = NULL, CCBSelectorResolver * pCCBSelectorResolver = NULL, CCNodeLoaderListener * pCCNodeLoaderListener = NULL);

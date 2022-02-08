@@ -7,6 +7,7 @@
 
 NS_CC_EXT_BEGIN
 
+// TODO: see https://github.com/gd-hyperdash/gdstl/issues/2
 typedef std::map<CCString *, CCNodeLoader *, CCStringCompare> CCNodeLoaderMap;
 typedef std::pair<CCString *, CCNodeLoader *> CCNodeLoaderMapEntry;
 

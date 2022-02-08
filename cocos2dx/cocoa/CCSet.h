@@ -61,7 +61,7 @@ public:
     */
     void addObject(CCObject *pObject);
     /**
-    *@brief Remove the given element, nothing todo if no element equals pObject.
+    *@brief Remove the given element, nothing to do if no element equals pObject.
     */
     void removeObject(CCObject *pObject);
     /**

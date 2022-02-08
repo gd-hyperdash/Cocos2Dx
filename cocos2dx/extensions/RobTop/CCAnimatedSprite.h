@@ -32,53 +32,150 @@ class CC_DLL SpriteAnimationManager
 public:
 	~SpriteAnimationManager();
 
-	static SpriteAnimationManager* createWithOwner(CCAnimatedSprite* owner, std::string animKey);
-	bool initWithOwner(CCAnimatedSprite* owner, std::string animKey);
+#define SYM_createWithOwner "_ZN22SpriteAnimationManager15createWithOwnerEP16CCAnimatedSpriteSs"
 
-	void executeAnimation(std::string animKey);
-	void runAnimation(std::string animKey);
-	void finishAnimation(std::string animKey);
+	[[link_name(SYM_createWithOwner)]]
+	static SpriteAnimationManager* createWithOwner(
+		CCAnimatedSprite* owner,
+		gdstd::string animKey);
+
+#undef SYM_createWithOwner
+
+#define SYM_initWithOwner "_ZN22SpriteAnimationManager13initWithOwnerEP16CCAnimatedSpriteSs"
+
+	[[link_name(SYM_initWithOwner)]]
+	bool initWithOwner(
+		CCAnimatedSprite* owner,
+		gdstd::string animKey);
+
+#undef SYM_initWithOwner
+
+#define SYM_executeAnimation "_ZN22SpriteAnimationManager16executeAnimationESs"
+
+	[[link_name(SYM_executeAnimation)]]
+	void executeAnimation(gdstd::string animKey);
+
+#undef SYM_executeAnimation
+
+#define SYM_runAnimation "_ZN22SpriteAnimationManager12runAnimationESs"
+
+	[[link_name(SYM_runAnimation)]]
+	void runAnimation(gdstd::string animKey);
+
+#undef SYM_runAction
+
+#define SYM_finishAnimation "_ZN22SpriteAnimationManager15finishAnimationESs"
+
+	[[link_name(SYM_finishAnimation)]]
+	void finishAnimation(gdstd::string animKey);
+
+#undef SYM_finishAnimation
+
 	void doCleanup();
 
 	void animationFinished();
-	void createAnimations(std::string animDefinition);
-	void loadAnimations(std::string animDefinition);
+
+#define SYM_createAnimations "_ZN22SpriteAnimationManager16createAnimationsESs"
+
+	[[link_name(SYM_createAnimations)]]
+	void createAnimations(gdstd::string animDefinition);
+
+#undef SYM_createAnimations
+
+#define SYM_loadAnimations "_ZN22SpriteAnimationManager14loadAnimationsESs"
+
+	[[link_name(SYM_loadAnimations)]]
+	void loadAnimations(gdstd::string animDefinition);
+
+#undef SYM_loadAnimations
 
 	void overridePrio();
 
 	void playSound();
-	void playSoundForAnimation(std::string animKey);
+
+#define SYM_playSoundForAnimation "_ZN22SpriteAnimationManager21playSoundForAnimationESs"
+
+	[[link_name(SYM_playSoundForAnimation)]]
+	void playSoundForAnimation(gdstd::string animKey);
+
+#undef SYM_playSoundForAnimation
 
 	void resetAnimState();
 
 	CCAnimatedSprite* owner_;
 
-	int getPrio(std::string animKey);
+#define SYM_getPrio "_ZN22SpriteAnimationManager7getPrioESs"
+
+	[[link_name(SYM_getPrio)]]
+	int getPrio(gdstd::string animKey);
+
+#undef SYM_getPrio
+
 	cocos2d::CCDictionary* prios_;
 
-	int getAnimType(std::string key);
+#define SYM_getAnimType "_ZN22SpriteAnimationManager11getAnimTypeESs"
+
+	[[link_name(SYM_getAnimType)]]
+	int getAnimType(gdstd::string key);
+
+#undef SYM_getAnimType
+
 	cocos2d::CCDictionary* animTypes_;
 
 	cocos2d::CCDictionary* storedSounds_;
 
-	void queueAnimation(std::string animKey);
+#define SYM_queueAnimation "_ZN22SpriteAnimationManager14queueAnimationESs"
+
+	[[link_name(SYM_queueAnimation)]]
+	void queueAnimation(gdstd::string animKey);
+
+#undef SYM_queueAnimation
+
 	void runQueuedAnimation();
 	gdstd::string queuedAnimation_;
 
+#define SYM_storeAnimation "_ZN22SpriteAnimationManager14storeAnimationEPN7cocos2d9CCAnimateESsi10spriteModePNS0_13CCSpriteFrameE"
+
+	[[link_name(SYM_storeAnimation)]]
 	void storeAnimation(
 		cocos2d::CCAnimate* animation,
-		std::string animKey,
+		gdstd::string animKey,
 		int prio,
 		spriteMode mode,
 		cocos2d::CCSpriteFrame* spriteFrame);
 
+#undef SYM_storeAnimation
+
+#define SYM_storeSoundForAnimation "_ZN22SpriteAnimationManager22storeSoundForAnimationEPN7cocos2d8CCStringESsf"
+
+	[[link_name(SYM_storeSoundForAnimation)]]
 	void storeSoundForAnimation(
 		cocos2d::CCString* sound,
-		std::string animKey,
+		gdstd::string animKey,
 		float soundDelay);
 
+#undef SYM_storeSoundForAnimation
+
 	CC_SYNTHESIZE(cocos2d::CCDictionary*, animationContainer_, AnimationContainer);
-	CC_SYNTHESIZE(std::string, activeAnimation_, ActiveAnimation);
+
+protected:
+	gdstd::string activeAnimation_;
+
+public:
+
+#define SYM_getActiveAnimation "_ZNK22SpriteAnimationManager18getActiveAnimationEv"
+
+	[[link_name(SYM_getActiveAnimation)]]
+	virtual gdstd::string getActiveAnimation() const;
+
+#undef SYM_getActiveAnimation
+
+#define SYM_setActiveAnimation "_ZN22SpriteAnimationManager18setActiveAnimationESs"
+
+	[[link_name(SYM_setActiveAnimation)]]
+	virtual void setActiveAnimation(gdstd::string animation);
+
+#undef SYM_setActiveAnimation
 };
 
 class CC_DLL SpriteDescription
@@ -205,7 +302,26 @@ public:
 	CC_SYNTHESIZE(CCSprite*, normalSprite_, NormalSprite);
 	CC_SYNTHESIZE(CCPartAnimSprite*, animatedSprite_, AnimatedSprite);
 	CC_SYNTHESIZE_READONLY(spriteMode, activeSpriteMode_, ActiveSpriteMode);
-	CC_SYNTHESIZE(std::string, defaultAnimation_, DefaultAnimation);
+
+protected:
+	gdstd::string defaultAnimation_;
+
+public:
+
+#define SYM_getDefaultAnimation "_ZNK16CCAnimatedSprite19getDefaultAnimationEv"
+
+	[[link_name(SYM_getDefaultAnimation)]]
+	virtual gdstd::string getDefaultAnimation() const;
+
+#undef SYM_getDefaultAnimation
+
+#define SYM_setDefaultAnimation "_ZN16CCAnimatedSprite19setDefaultAnimationESs"
+
+	[[link_name(SYM_setDefaultAnimation)]]
+	virtual void setDefaultAnimation(gdstd::string animation);
+
+#undef SYM_setDefaultAnimation
+
 	CC_SYNTHESIZE(AnimatedSpriteDelegate*, delegate_, Delegate);
 };
 

@@ -125,11 +125,46 @@ public:
     void setAtlasName(const char* atlasName);
 private:
     bool parseConfigFile(const char *controlFile);
-    void parseCharacterDefinition(std::string line, ccBMFontDef *characterDefinition);
-    void parseInfoArguments(std::string line);
-    void parseCommonArguments(std::string line);
-    void parseImageFileName(std::string line, const char *fntFile);
-    void parseKerningEntry(std::string line);
+
+#define SYM_parseCharacterDefinition "_ZN7cocos2d21CCBMFontConfiguration24parseCharacterDefinitionESsPNS_10_BMFontDefE"
+
+    [[link_name(SYM_parseCharacterDefinition)]]
+    void parseCharacterDefinition(
+        gdstd::string line,
+        ccBMFontDef *characterDefinition);
+
+#undef SYM_parseCharacterDefinition
+
+#define SYM_parseInfoArguments "_ZN7cocos2d21CCBMFontConfiguration18parseInfoArgumentsESs"
+
+    [[link_name(SYM_parseInfoArguments)]]
+    void parseInfoArguments(gdstd::string line);
+
+#undef SYM_parseInfoArguments
+
+#define SYM_parseCommonArguments "_ZN7cocos2d21CCBMFontConfiguration20parseCommonArgumentsESs"
+
+    [[link_name(SYM_parseCommonArguments)]]
+    void parseCommonArguments(gdstd::string line);
+
+#undef SYM_parseCommonArguments
+
+#define SYM_parseImageFileName "_ZN7cocos2d21CCBMFontConfiguration18parseImageFileNameESsPKc"
+
+    [[link_name(SYM_parseImageFileName)]]
+    void parseImageFileName(
+        gdstd::string line,
+        const char *fntFile);
+
+#undef SYM_parseImageFileName
+
+#define SYM_parseKerningEntry "_ZN7cocos2d21CCBMFontConfiguration17parseKerningEntryESs"
+
+    [[link_name(SYM_parseKerningEntry)]]
+    void parseKerningEntry(gdstd::string line);
+
+#undef SYM_parseKerningEntry
+
     void purgeKerningDictionary();
     void purgeFontDefDictionary();
 };

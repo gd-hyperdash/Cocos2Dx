@@ -105,7 +105,7 @@ private:
     int _timeoutForConnect;
     int _timeoutForRead;
     
-    // std::string reqId;
+    // s td::string reqId;
 };
 
 // end of Network group

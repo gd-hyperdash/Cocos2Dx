@@ -69,11 +69,17 @@ public:
      You can set the default value, or it is 0.0.
     */
     double  getDoubleForKey(const char* pKey, double defaultValue=0.0);
+
+#define SYM_getStringForKey "_ZN7cocos2d13CCUserDefault15getStringForKeyEPKcRKSs"
+
     /**
     @brief Get string value by key, if the key doesn't exist, a default value will return.
     You can set the default value, or it is "".
     */
-    std::string getStringForKey(const char* pKey, const std::string & defaultValue = "");
+    [[link_name(SYM_getStringForKey)]]
+    gdstd::string getStringForKey(const char* pKey, const gdstd::string & defaultValue = "");
+
+#undef SYM_getStringForKey
 
     // set value methods
 
@@ -93,10 +99,17 @@ public:
     @brief Set double value by key.
     */
     void    setDoubleForKey(const char* pKey, double value);
+
+#define SYM_setStringForKey "_ZN7cocos2d13CCUserDefault15setStringForKeyEPKcRKSs"
+
     /**
     @brief Set string value by key.
     */
-    void    setStringForKey(const char* pKey, const std::string & value);
+   [[link_name(SYM_setStringForKey)]]
+    void    setStringForKey(const char* pKey, const gdstd::string & value);
+
+#undef SYM_setStringForKey
+
     /**
      @brief Save content to xml file
      */
@@ -104,7 +117,13 @@ public:
 
     static CCUserDefault* sharedUserDefault();
     static void purgeSharedUserDefault();
-    const static std::string& getXMLFilePath();
+
+#define SYM_getXMLFilePath "_ZN7cocos2d13CCUserDefault14getXMLFilePathEv"
+
+    [[link_name(SYM_getXMLFilePath)]]
+    const static gdstd::string& getXMLFilePath();
+
+#undef SYM_getXMLFilePath
 
 private:
     CCUserDefault();

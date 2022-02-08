@@ -45,7 +45,13 @@ public:
     static jclass getClassID(const char *className, JNIEnv *env=0);
     static bool getStaticMethodInfo(JniMethodInfo &methodinfo, const char *className, const char *methodName, const char *paramCode);
     static bool getMethodInfo(JniMethodInfo &methodinfo, const char *className, const char *methodName, const char *paramCode);
-    static std::string jstring2string(jstring str);
+
+#define SYM_jstring2string "_ZN7cocos2d9JniHelper14jstring2stringEP8_jstring"
+
+    [[link_name(SYM_jstring2string)]]
+    static gdstd::string jstring2string(jstring str);
+
+#undef SYM_jstring2string
 
 private:
     static JavaVM *m_psJavaVM;

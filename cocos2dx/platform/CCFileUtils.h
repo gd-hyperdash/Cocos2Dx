@@ -62,6 +62,8 @@ public:
     */
     unsigned char* getFileDataFromZip(const char* pszZipFilePath, const char* pszFileName, unsigned long * pSize);
 
+#define SYM_removeSuffixFromFile "_ZN7cocos2d11CCFileUtils20removeSuffixFromFileERSs"
+
     /** removes the suffix from a path
      * On RetinaDisplay it will remove the -hd suffix
      * On iPad it will remove the -ipad suffix
@@ -70,7 +72,10 @@ public:
  
      @since v0.99.5
      */
-    std::string& removeSuffixFromFile(std::string& path);
+    [[link_name(SYM_removeSuffixFromFile)]]
+    gdstd::string& removeSuffixFromFile(gdstd::string& path);
+
+#undef SYM_removeSuffixFromFile
 
     /**
     @brief   Generate the absolute path of the file.
@@ -153,11 +158,16 @@ public:
     */
     void setResourcePath(const char *pszResourcePath);
 
+#define SYM_getWriteablePath "_ZN7cocos2d11CCFileUtils16getWriteablePathEv"
+
     /**
     @brief   Get the writeable path
     @return  The path that can write/read file
     */
-    std::string getWriteablePath();
+   [[link_name(SYM_getWriteablePath)]]
+    gdstd::string getWriteablePath();
+
+#undef SYM_getWriteablePath
 
     /**
     @brief Set/Get whether pop-up a message box when the image load failed

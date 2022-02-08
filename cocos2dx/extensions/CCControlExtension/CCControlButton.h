@@ -108,11 +108,36 @@ public:
     CC_DEPRECATED_ATTRIBUTE static CCControlButton* buttonWithLabelAndBackgroundSprite(CCNode* label, CCScale9Sprite* backgroundSprite);
     static CCControlButton* create(CCNode* label, CCScale9Sprite* backgroundSprite);
     
-    virtual bool initWithTitleAndFontNameAndFontSize(std::string title, const char * fontName, float fontSize);
-    //@deprecated: This interface will be deprecated sooner or later.
-    CC_DEPRECATED_ATTRIBUTE static CCControlButton* buttonWithTitleAndFontNameAndFontSize(std::string title, const char * fontName, float fontSize);
+#define SYM_initWithTitleAndFontNameAndFontSize "_ZN7cocos2d9extension15CCControlButton35initWithTitleAndFontNameAndFontSizeESsPKcf"
 
-    static CCControlButton* create(std::string title, const char * fontName, float fontSize);
+    [[link_name(SYM_initWithTitleAndFontNameAndFontSize)]]
+    virtual bool initWithTitleAndFontNameAndFontSize(
+        gdstd::string title,
+        const char * fontName,
+        float fontSize);
+
+#undef SYM_initWithTitleAndFontNameAndFontSize
+
+#define SYM_buttonWithTitleAndFontNameAndFontSize "_ZN7cocos2d9extension15CCControlButton37buttonWithTitleAndFontNameAndFontSizeESsPKcf"
+
+    //@deprecated: This interface will be deprecated sooner or later.
+    [[link_name(SYM_buttonWithTitleAndFontNameAndFontSize)]]
+    CC_DEPRECATED_ATTRIBUTE static CCControlButton* buttonWithTitleAndFontNameAndFontSize(
+        gdstd::string title,
+        const char * fontName,
+        float fontSize);
+
+#undef SYM_buttonWithTitleAndFontNameAndFontSize
+
+#define SYM_create "_ZN7cocos2d9extension15CCControlButton6createESsPKcf"
+
+    [[link_name(SYM_create)]]
+    static CCControlButton* create(
+        gdstd::string title,
+        const char * fontName,
+        float fontSize);
+
+#undef SYM_create
     
     virtual bool initWithBackgroundSprite(CCScale9Sprite* sprite);
 

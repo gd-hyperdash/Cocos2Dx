@@ -21,13 +21,19 @@ private:
     DS_Dictionary& operator= (const DS_Dictionary& dictionary);    //Assignment - blocker
 
                                                                    //Methods
-    std::string cleanStringWhiteSpace(const std::string& _str);
+
+#define SYM_cleanStringWhiteSpace "_ZN13DS_Dictionary21cleanStringWhiteSpaceERKSs"
+
+    [[link_name(SYM_cleanStringWhiteSpace)]]
+    gdstd::string cleanStringWhiteSpace(const gdstd::string& _str);
+
+#undef SYM_cleanStringWhiteSpace
 
 #define SYM_split "_ZN13DS_Dictionary5splitERKSsPKcRSt6vectorISsSaISsEE"
 
     [[link_name(SYM_split)]]
     void split(
-        const std::string& src,
+        const gdstd::string& src,
         const char* token,
         gdstd::vector<gdstd::string>& vect);
 
@@ -37,18 +43,28 @@ private:
 
     [[link_name(SYM_splitWithForm)]]
     bool splitWithForm(
-        const std::string& content,
+        const gdstd::string& content,
         gdstd::vector<gdstd::string>& strs);
 
 #undef SYM_splitWithForm
 
+#define SYM_rectFromString "_ZN13DS_Dictionary14rectFromStringERKSsRN7cocos2d6CCRectE"
+
+    [[link_name(SYM_rectFromString)]]
     bool rectFromString(
-        const std::string& pszContent,
+        const gdstd::string& pszContent,
         cocos2d::CCRect& rect);
 
+#undef SYM_rectFromString
+
+#define SYM_vec2FromString "_ZN13DS_Dictionary14vec2FromStringERKSsRN7cocos2d7CCPointE"
+
+    [[link_name(SYM_vec2FromString)]]
     bool vec2FromString(
-        const std::string& pszContent,
+        const gdstd::string& pszContent,
         cocos2d::CCPoint& vec2);
+
+#undef SYM_vec2FromString
 
 public:
     //Constructor
@@ -57,8 +73,21 @@ public:
     //Methods
     bool loadRootSubDictFromFile(const char* fileName);
     bool saveRootSubDictToFile(const char* fileName);
-    bool loadRootSubDictFromString(std::string val);
-    std::string saveRootSubDictToString();
+
+#define SYM_loadRootSubDictFromString "_ZN13DS_Dictionary25loadRootSubDictFromStringESs"
+
+    [[link_name(SYM_loadRootSubDictFromString)]]
+    bool loadRootSubDictFromString(gdstd::string val);
+
+#undef SYM_loadRootSubDictFromString
+
+#define SYM_saveRootSubDictToString "_ZN13DS_Dictionary23saveRootSubDictToStringEv"
+
+    [[link_name(SYM_saveRootSubDictToString)]]
+    gdstd::string saveRootSubDictToString();
+
+#undef SYM_saveRootSubDictToString
+
     bool stepIntoSubDictWithKey(const char* key);
     void stepOutOfSubDict();
     void stepBackToRootSubDict();
@@ -89,7 +118,14 @@ public:
     int getIntegerForKey(const char* key);
     bool getBoolForKey(const char* key);
     float getFloatForKey(const char* key);
-    std::string getStringForKey(const char* key);
+
+#define SYM_getStringForKey "_ZN13DS_Dictionary15getStringForKeyEPKc"
+
+    [[link_name(SYM_getStringForKey)]]
+    gdstd::string getStringForKey(const char* key);
+
+#undef SYM_getStringForKey
+
     cocos2d::CCPoint getVec2ForKey(const char* key);
     cocos2d::CCRect getRectForKey(const char* key);
 
@@ -126,8 +162,26 @@ public:
     void setBoolForKey(const char* key, bool value, bool alphaNumericallySorted);
     void setFloatForKey(const char* key, float value);
     void setFloatForKey(const char* key, float value, bool alphaNumericallySorted);
-    void setStringForKey(const char* key, const std::string& value);
-    void setStringForKey(const char* key, const std::string& value, bool alphaNumericallySorted);
+
+#define SYM_setStringForKey "_ZN13DS_Dictionary15setStringForKeyEPKcRKSs"
+
+    [[link_name(SYM_setStringForKey)]]
+    void setStringForKey(
+        const char* key,
+        const gdstd::string& value);
+
+#undef SYM_setStringForKey
+
+#define SYM_setStringForKey "_ZN13DS_Dictionary15setStringForKeyEPKcRKSsb"
+
+    [[link_name(SYM_setStringForKey)]]
+    void setStringForKey(
+        const char* key,
+        const gdstd::string& value,
+        bool alphaNumericallySorted);
+
+#undef SYM_setStringForKey
+
     void setVec2ForKey(const char* key, const cocos2d::CCPoint& value);
     void setVec2ForKey(const char* key, const cocos2d::CCPoint& value, bool alphaNumericallySorted);
     void setRectForKey(const char* key, const cocos2d::CCRect& value);

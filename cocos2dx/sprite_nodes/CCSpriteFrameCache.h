@@ -139,7 +139,8 @@ private:
 protected:
     CCDictionary* m_pSpriteFrames;
     CCDictionary* m_pSpriteFramesAliases;
-    std::set<std::string>*  m_pLoadedFileNames;
+    // TODO: see https://github.com/gd-hyperdash/gdstl/issues/2
+    // s td::set<s td::string>*  m_pLoadedFileNames;
 };
 
 // end of sprite_nodes group

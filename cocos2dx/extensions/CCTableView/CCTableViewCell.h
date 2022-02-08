@@ -29,7 +29,26 @@ public:
     /*defalut is ccRED*/
     CC_SYNTHESIZE(cocos2d::ccColor3B, delBtnColor, DelBtnColor);
     CC_SYNTHESIZE(cocos2d::CCMenuItem *, deleteButton, DeleteButton);
-    CC_SYNTHESIZE_PASS_BY_REF(std::string,cellIdentifier,CellIdentifier);
+
+protected:
+    gdstd::string cellIdentifier;
+
+public:
+
+#define SYM_getCellIdentifier "_ZNK15CCTableViewCell17getCellIdentifierEv"
+
+    [[link_name(SYM_getCellIdentifier)]]
+    virtual const gdstd::string& getCellIdentifier(void) const;
+
+#undef SYM_getCellIdentifier
+
+#define SYM_setCellIdentifier "_ZN15CCTableViewCell17setCellIdentifierERKSs"
+
+    [[link_name(SYM_setCellIdentifier)]]
+    virtual void setCellIdentifier(const gdstd::string& identifier);
+
+#undef SYM_setCellIdentifier
+
     /*it is called automatically*/
     void resetDeleteButtonPosition();
     void showDeleteButton(bool mShow);

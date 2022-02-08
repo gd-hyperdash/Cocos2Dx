@@ -108,7 +108,7 @@ private:
     //return CCTableViewCell for touch event
     CCTableViewCell* cellForTouch(cocos2d::CCTouch *touch);
     /*it is called automatically*/
-    bool deleteCCTableViewCell(CCTableViewCell * mCell); /*TODO*/
+    bool deleteCCTableViewCell(CCTableViewCell * mCell);
     /*check boundary of content layer*/
     void checkBoundaryOfContent(ccTime mTime);
     /*check boundary of cell*/
@@ -145,7 +145,6 @@ public:
     CCTableViewCell * cellForRowAtIndexPath(CCIndexPath &mIndexPath);// returns nil if cell is not visible or index path is out of range
     void reloadData();
     
-    /*TODO*/
     void scrollToIndexPath(CCIndexPath & mIndexPath);
     
 public:
