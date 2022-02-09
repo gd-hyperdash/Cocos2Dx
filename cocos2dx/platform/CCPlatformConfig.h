@@ -107,7 +107,7 @@ build for which target platform
 #endif  // CC_PLATFORM_WIN32
 
 // Include GDSTL
-#include <gdstl.hpp>
+#include <gdstl.h>
 
 #endif  // __CC_PLATFORM_CONFIG_H__
 
